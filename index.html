@@ -1,0 +1,2107 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<!-- ============ SECURITY HEADERS (meta-level) ============ -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action https://formspree.io;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXUZ — Move smarter, grow faster. | Automatización y Redes Sociales con IA</title>
+
+<!-- ============ SEO META TAGS ============ -->
+<meta name="description" content="NEXUZ — Gestión de redes sociales, chatbots y automatizaciones con Inteligencia Artificial. Planes desde $13,000 MXN/mes. Move smarter, grow faster.">
+<meta name="keywords" content="redes sociales, automatización, IA, chatbot, marketing digital, NEXUZ, México, gestión de redes, contenido con IA">
+<meta name="author" content="NEXUZ">
+<meta name="robots" content="index, follow">
+<meta name="language" content="Spanish">
+<meta name="geo.region" content="MX">
+<meta name="geo.placename" content="México">
+
+<!-- OPEN GRAPH -->
+<meta property="og:title" content="NEXUZ — Move smarter, grow faster.">
+<meta property="og:description" content="Gestión de redes sociales con IA. Automatizaciones, chatbots y estrategia digital para tu negocio.">
+<meta property="og:image" content="logo.jpeg">
+<meta property="og:url" content="https://nexuzmexico.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NEXUZ">
+<meta property="og:locale" content="es_MX">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NEXUZ — Move smarter, grow faster.">
+<meta name="twitter:description" content="Gestión de redes sociales con IA. Automatizaciones, chatbots y estrategia digital.">
+<meta name="twitter:image" content="logo.jpeg">
+
+<!-- CANONICAL -->
+<link rel="canonical" href="https://nexuzmexico.com">
+
+<!-- FAVICON -->
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:          #01010a;
+  --bg2:         #03030e;
+  --text:        #ffffff;
+  --text2:       #7a7a9e;
+  --accent:      #2B2BFF;
+  --accent2:     #6060ff;
+  --accent3:     #00d4ff;
+  --glow:        rgba(43,43,255,0.45);
+  --glow2:       rgba(43,43,255,0.15);
+  --glow3:       rgba(0,212,255,0.25);
+  --glass-bg:    rgba(8,8,22,0.55);
+  --glass-bg2:   rgba(10,10,30,0.75);
+  --glass-border:rgba(255,255,255,0.07);
+  --glass-hover: rgba(43,43,255,0.18);
+  --nav-h:       68px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Sora',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:4px;}
+
+/* ============ PROGRESS BAR ============ */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 10000;
+}
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent3));
+  width: 0%;
+  transition: width 0.1s ease;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* ============ GLOBAL BG CANVAS ============ */
+#globalCanvas{
+  position:fixed;top:0;left:0;
+  width:100%;height:100%;
+  pointer-events:none;
+  z-index:0;
+  opacity:.55;
+}
+
+
+
+/* ============ NAV ============ */
+nav{
+  position:fixed;top:0;width:100%;z-index:800;
+  height:var(--nav-h);
+  background:rgba(1,1,12,0.45);
+  backdrop-filter:blur(28px) saturate(180%);
+  -webkit-backdrop-filter:blur(28px) saturate(180%);
+  border-bottom:1px solid var(--glass-border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3.5rem;
+  transition:all .4s ease;
+}
+nav.scrolled{
+  background:rgba(1,1,12,0.82);
+  border-bottom-color:rgba(43,43,255,0.22);
+  box-shadow:0 6px 40px rgba(0,0,0,0.6);
+}
+.nav-logo-link{cursor:pointer;display:flex;align-items:center;text-decoration:none;}
+.nav-logo-img{
+  height:28px;width:auto;display:block;
+  filter:drop-shadow(0 0 10px rgba(43,43,255,0.6));
+  transition:filter .3s;
+}
+.nav-logo-link:hover .nav-logo-img{filter:drop-shadow(0 0 24px rgba(43,43,255,1)) brightness(1.4);}
+.nav-links{display:flex;gap:2.2rem;list-style:none;}
+.nav-links a{
+  text-decoration:none;color:var(--text2);
+  font-size:.72rem;font-weight:600;letter-spacing:1.2px;
+  text-transform:uppercase;transition:all .25s;cursor:pointer;
+  position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-5px;left:0;
+  width:0;height:1px;
+  background:linear-gradient(90deg,var(--accent),var(--accent3));
+  box-shadow:0 0 8px var(--glow);
+  transition:width .3s ease;
+}
+.nav-links a:hover{color:#fff;}
+.nav-links a:hover::after{width:100%;}
+
+.btn-nav-cart{
+  position:relative;
+  background:var(--glass-bg);
+  border:1px solid rgba(43,43,255,0.3);
+  color:var(--text);
+  width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .25s;font-size:.75rem;
+  backdrop-filter:blur(10px);
+}
+.btn-nav-cart:hover{
+  border-color:rgba(43,43,255,0.7);
+  background:var(--glass-hover);
+  box-shadow:0 0 20px rgba(43,43,255,0.2);
+  transform:translateY(-2px);
+}
+.cart-badge{
+  position:absolute;top:-6px;right:-6px;
+  background:var(--accent);color:#fff;
+  width:18px;height:18px;border-radius:50%;
+  font-size:.6rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:scale(0);
+  transition:all .3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.cart-badge.show{opacity:1;transform:scale(1);}
+
+.btn-cta{
+  background:linear-gradient(135deg,var(--accent),#1a1af0);
+  color:#fff;border:none;
+  padding:.6rem 1.5rem;border-radius:10px;
+  font-size:.73rem;font-weight:700;cursor:pointer;
+  letter-spacing:1px;text-transform:uppercase;
+  transition:all .3s;text-decoration:none;
+  font-family:'Sora',sans-serif;
+  position:relative;overflow:hidden;
+  box-shadow:0 0 20px rgba(43,43,255,0.25);
+}
+.btn-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 35px rgba(43,43,255,0.5);
+}
+.nav-right{display:flex;align-items:center;gap:.8rem;}
+
+/* ============ HERO ============ */
+.hero{
+  height:100vh;min-height:620px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero-aura{
+  position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 50%,rgba(43,43,255,.22) 0%,transparent 65%),
+    radial-gradient(ellipse 35% 45% at 20% 80%,rgba(0,212,255,.09) 0%,transparent 60%),
+    radial-gradient(ellipse 35% 45% at 80% 20%,rgba(80,80,255,.10) 0%,transparent 60%);
+  animation:auraPulse 10s ease-in-out infinite alternate;
+}
+@keyframes auraPulse{
+  0%{opacity:.7;transform:scale(1);}
+  100%{opacity:1;transform:scale(1.05);}
+}
+.hero-grid-overlay{
+  position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:
+    linear-gradient(rgba(43,43,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(43,43,255,.045) 1px,transparent 1px);
+  background-size:70px 70px;
+  mask-image:radial-gradient(ellipse 75% 75% at center,black 20%,transparent 100%);
+}
+.hero-content{position:relative;z-index:3;}
+
+.hero-logo-wrap{
+  position:relative;
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-bottom:2.5rem;
+  animation:logoAppear 1.6s cubic-bezier(0.16,1,0.3,1) both;
+}
+.hero-logo-wrap::before{
+  content:'';
+  position:absolute;
+  width:200%;height:200%;
+  background:radial-gradient(ellipse,rgba(43,43,255,.45) 0%,transparent 60%);
+  border-radius:50%;
+  animation:logoAura 5s ease-in-out infinite alternate;
+  filter:blur(20px);
+  pointer-events:none;
+}
+@keyframes logoAura{
+  0%{transform:scale(.8);opacity:.5;}
+  100%{transform:scale(1.2);opacity:1;}
+}
+@keyframes logoAppear{
+  0%{opacity:0;transform:scale(.5) translateY(50px);}
+  60%{filter:brightness(2.5) drop-shadow(0 0 60px rgba(43,43,255,1));}
+  100%{opacity:1;transform:scale(1) translateY(0);}
+}
+.hero-logo-img{
+  height:clamp(130px,22vw,280px);width:auto;display:block;
+  filter:
+    drop-shadow(0 0 40px rgba(43,43,255,.95))
+    drop-shadow(0 0 80px rgba(43,43,255,.5))
+    drop-shadow(0 0 160px rgba(43,43,255,.25))
+    brightness(1.15) contrast(1.1);
+  position:relative;z-index:1;
+  transition:all .5s ease;
+}
+.hero-logo-wrap:hover .hero-logo-img{
+  filter:
+    drop-shadow(0 0 70px rgba(43,43,255,1.3))
+    drop-shadow(0 0 140px rgba(0,212,255,.5))
+    drop-shadow(0 0 220px rgba(43,43,255,.3))
+    brightness(1.4) contrast(1.2);
+}
+
+.hero-slogan{
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(.68rem,1.8vw,.95rem);
+  color:rgba(255,255,255,.88);
+  letter-spacing:clamp(10px,2.5vw,22px);
+  text-transform:uppercase;font-weight:700;
+  padding-left:clamp(10px,2.5vw,22px);
+  animation:sloganReveal 1.2s .7s cubic-bezier(0.16,1,0.3,1) both,sloganGlow 3s 1.9s ease-in-out infinite;
+  position:relative;
+}
+.hero-slogan::before{
+  content:'';
+  position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);
+  width:80%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),var(--accent3),var(--accent),transparent);
+  animation:lineGlow 3s ease-in-out infinite;
+}
+@keyframes sloganReveal{
+  0%{opacity:0;letter-spacing:60px;filter:blur(20px);}
+  100%{opacity:1;letter-spacing:clamp(10px,2.5vw,22px);filter:blur(0);}
+}
+@keyframes sloganGlow{
+  0%,100%{text-shadow:0 0 30px rgba(43,43,255,.6),0 0 60px rgba(43,43,255,.3);}
+  50%{text-shadow:0 0 50px rgba(43,43,255,.9),0 0 100px rgba(0,212,255,.4);}
+}
+@keyframes lineGlow{
+  0%,100%{opacity:.5;}50%{opacity:1;}
+}
+
+.scroll-hint{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  animation:fadeIn 1s 2.2s both;z-index:3;
+}
+.scroll-hint span{font-size:.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--text2);}
+.scroll-arrow{
+  width:18px;height:18px;
+  border-right:1px solid rgba(43,43,255,.8);
+  border-bottom:1px solid rgba(43,43,255,.8);
+  transform:rotate(45deg);
+  box-shadow:2px 2px 8px rgba(43,43,255,.4);
+  animation:arrowBounce 2s ease-in-out infinite;
+}
+@keyframes arrowBounce{0%,100%{transform:rotate(45deg) translateY(0);opacity:.4;}50%{transform:rotate(45deg) translateY(8px);opacity:1;}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* ============ REVEAL ============ */
+.reveal{
+  opacity:0;transform:translateY(50px);
+  transition:opacity .9s cubic-bezier(0.16,1,0.3,1),transform .9s cubic-bezier(0.16,1,0.3,1);
+  will-change:transform,opacity;
+}
+.reveal.delay-1{transition-delay:.1s;} .reveal.delay-2{transition-delay:.2s;}
+.reveal.delay-3{transition-delay:.3s;} .reveal.delay-4{transition-delay:.4s;}
+.reveal.delay-5{transition-delay:.5s;} .reveal.delay-6{transition-delay:.6s;}
+.reveal.active{opacity:1;transform:translateY(0);}
+
+/* ============ SECTIONS ============ */
+.sec{padding:7rem 4rem;max-width:1200px;margin:0 auto;position:relative;z-index:2;}
+.sec-full{
+  padding:7rem 4rem;
+  position:relative;overflow:hidden;z-index:2;
+  background:rgba(3,3,18,.5);
+  backdrop-filter:blur(4px);
+}
+.sec-full::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 50% 80% at 0% 50%,rgba(43,43,255,.04) 0%,transparent 70%),
+    radial-gradient(ellipse 50% 80% at 100% 50%,rgba(43,43,255,.04) 0%,transparent 70%);
+}
+.sec-inner{max-width:1200px;margin:0 auto;position:relative;}
+
+.label{
+  display:inline-flex;align-items:center;gap:.7rem;
+  font-size:.65rem;font-weight:700;letter-spacing:5px;
+  text-transform:uppercase;color:var(--accent2);
+  margin-bottom:1rem;
+}
+.label::before{
+  content:'';display:block;width:28px;height:1px;
+  background:linear-gradient(90deg,var(--accent),var(--accent3));
+  box-shadow:0 0 10px rgba(43,43,255,.5);
+}
+.title{
+  font-size:clamp(1.8rem,4vw,3rem);font-weight:700;
+  color:var(--text);line-height:1.08;
+  margin-bottom:1.2rem;letter-spacing:-.025em;
+}
+.title em{font-style:normal;color:transparent;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  -webkit-background-clip:text;background-clip:text;
+}
+.sub{font-size:.9rem;color:var(--text2);max-width:460px;line-height:1.9;}
+
+/* ============ GLASS CARD ============ */
+.glass{
+  background:var(--glass-bg);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  border:1px solid var(--glass-border);
+  border-radius:20px;
+  transition:all .35s ease;
+  position:relative;overflow:hidden;
+}
+.glass::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.04) 0%,transparent 60%);
+  pointer-events:none;
+}
+.glass:hover{
+  border-color:rgba(43,43,255,.4);
+  box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 0 1px rgba(43,43,255,.1),inset 0 0 40px rgba(43,43,255,.03);
+  transform:translateY(-6px);
+}
+
+/* ============ ABOUT ============ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 3.5rem;
+}
+.about-text p{font-size:.88rem;color:var(--text2);line-height:2;margin-bottom:1.3rem;}
+.about-text .highlight{
+  color:var(--text);font-size:.86rem;font-weight:500;
+  background:rgba(43,43,255,.06);
+  border-left:2px solid transparent;
+  border-image:linear-gradient(180deg,var(--accent),var(--accent3)) 1;
+  padding:.85rem 1.3rem;margin-top:1rem;line-height:1.7;
+  backdrop-filter:blur(8px);
+}
+
+/* ============ SERVICES ============ */
+.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3.5rem;}
+.srv-card{padding:2rem 1.6rem;border-radius:22px;}
+.srv-card::after{
+  content:'';position:absolute;
+  bottom:0;left:0;width:100%;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent3));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s ease;
+}
+.srv-card:hover::after{transform:scaleX(1);}
+.srv-icon{
+  width:48px;height:48px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.4rem;
+  color:var(--accent3);
+  background:rgba(0,212,255,.06);
+  border-radius:14px;border:1px solid rgba(0,212,255,.15);
+  transition:all .35s;
+}
+.srv-card:hover .srv-icon{
+  background:rgba(43,43,255,.15);
+  color:var(--accent);
+  box-shadow:0 0 30px rgba(43,43,255,.3);
+  transform:scale(1.08) rotate(-3deg);
+}
+.srv-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.75;}
+.srv-card h3{font-size:.88rem;font-weight:700;margin-bottom:.65rem;}
+.srv-card p{font-size:.78rem;color:var(--text2);line-height:1.75;}
+
+/* ============ PLANS ============ */
+.plans-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;margin-top:3.5rem;
+  align-items:stretch;
+}
+.plan{
+  padding:2.4rem;border-radius:26px;cursor:pointer;
+  display:flex;flex-direction:column;
+}
+.plan.hot{
+  border-color:rgba(43,43,255,.45);
+  box-shadow:0 0 60px rgba(43,43,255,.12),inset 0 0 60px rgba(43,43,255,.03);
+}
+.plan.hot::after{
+  content:'MAS POPULAR';
+  position:absolute;top:24px;right:-38px;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  color:#fff;font-size:.53rem;font-weight:700;letter-spacing:2px;
+  padding:.4rem 0;transform:rotate(45deg);width:150px;
+  text-align:center;
+  box-shadow:0 4px 20px rgba(43,43,255,.5);z-index:5;
+}
+.plan-nm{
+  font-family:'Orbitron',sans-serif;font-size:.72rem;font-weight:700;
+  letter-spacing:4px;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:.5rem;
+}
+.plan-tg{font-size:.77rem;color:var(--text2);margin-bottom:1.5rem;font-style:italic;line-height:1.65;min-height:3.2rem;}
+.plan-act{font-size:.7rem;color:var(--text2);margin-bottom:.3rem;}
+.plan-act strong{color:rgba(255,255,255,.7);}
+.plan-price{
+  font-family:'Orbitron',sans-serif;font-size:1.9rem;font-weight:700;
+  color:var(--text);margin-bottom:.2rem;line-height:1;
+}
+.plan-price span{font-size:.75rem;color:var(--text2);font-weight:400;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent);margin:1.5rem 0;}
+.plan-list{list-style:none;margin-bottom:1.6rem;flex:1;}
+.plan-list li{
+  font-size:.78rem;color:var(--text2);
+  padding:.38rem 0;display:flex;gap:.6rem;
+  align-items:flex-start;line-height:1.55;
+}
+.plan-list li .ck{
+  width:16px;height:16px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  flex-shrink:0;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.5rem;color:#fff;
+}
+.plan-actions{display:flex;flex-direction:column;gap:.6rem;margin-top:auto;}
+.plan-btn{
+  width:100%;padding:.85rem;
+  background:linear-gradient(135deg,var(--accent),#1a1af0);
+  color:#fff;border:none;border-radius:12px;
+  font-size:.78rem;font-weight:700;cursor:pointer;
+  letter-spacing:.6px;transition:all .3s;
+  text-transform:uppercase;
+  box-shadow:0 6px 25px rgba(43,43,255,.25);
+}
+.plan-btn:hover{box-shadow:0 10px 40px rgba(43,43,255,.5);transform:translateY(-2px);}
+.plan-btn2{
+  width:100%;padding:.7rem;
+  background:rgba(43,43,255,.06);color:var(--accent2);
+  border:1px solid rgba(43,43,255,.2);
+  border-radius:12px;font-size:.74rem;font-weight:600;
+  cursor:pointer;letter-spacing:.4px;transition:all .25s;
+  backdrop-filter:blur(6px);
+}
+.plan-btn2:hover{background:rgba(43,43,255,.14);border-color:rgba(43,43,255,.5);}
+.plan-cart-btn{
+  width:100%;padding:.65rem;
+  background:rgba(0,212,255,.06);color:var(--accent3);
+  border:1px solid rgba(0,212,255,.18);
+  border-radius:12px;font-size:.72rem;font-weight:600;
+  cursor:pointer;letter-spacing:.4px;transition:all .25s;
+  display:flex;align-items:center;justify-content:center;gap:.4rem;
+}
+.plan-cart-btn:hover{background:rgba(0,212,255,.12);border-color:rgba(0,212,255,.45);}
+
+/* ============ ADICIONALES ============ */
+.ind-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;margin-top:3.5rem;}
+.ind-card{
+  padding:1.35rem 1.6rem;border-radius:16px;
+  display:flex;align-items:center;justify-content:space-between;
+  cursor:pointer;gap:1.2rem;
+}
+.ind-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,var(--accent),var(--accent3));
+  transform:scaleY(0);transform-origin:bottom;
+  transition:transform .35s ease;
+}
+.ind-card:hover{transform:translateX(8px)!important;}
+.ind-card:hover::before{transform:scaleY(1);}
+.ind-info h4{font-size:.85rem;font-weight:700;margin-bottom:.2rem;}
+.ind-info p{font-size:.73rem;color:var(--text2);}
+.ind-right{display:flex;flex-direction:column;align-items:flex-end;gap:.4rem;}
+.ind-price{
+  font-family:'Orbitron',sans-serif;font-size:.88rem;font-weight:700;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  white-space:nowrap;
+}
+.ind-add-btn{
+  font-size:.62rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+  color:var(--accent3);cursor:pointer;
+  background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.15);
+  padding:.28rem .7rem;border-radius:6px;white-space:nowrap;
+  transition:all .25s;flex-shrink:0;
+}
+.ind-add-btn:hover{background:rgba(0,212,255,.15);border-color:rgba(0,212,255,.4);}
+.ind-add-btn.added{background:rgba(43,43,255,.15);border-color:rgba(43,43,255,.4);color:var(--accent2);}
+
+/* ============ PORTFOLIO CAROUSEL ============ */
+#portafolio{
+  padding:7rem 4rem;
+  position:relative;z-index:2;
+  background:rgba(1,1,10,.6);
+  backdrop-filter:blur(4px);
+  overflow:hidden;
+}
+#portafolio::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(43,43,255,.07) 0%,transparent 70%);
+}
+.car-inner{max-width:1200px;margin:0 auto;position:relative;}
+.car-header{text-align:center;margin-bottom:3.5rem;}
+.car-viewport{position:relative;overflow:hidden;border-radius:24px;}
+.car-track{display:flex;gap:1.5rem;transition:transform .6s cubic-bezier(0.16,1,0.3,1);will-change:transform;}
+.car-slide{flex:0 0 calc(33.333% - 1rem);min-width:0;}
+.car-card{border-radius:22px;overflow:hidden;cursor:pointer;transition:all .4s cubic-bezier(0.16,1,0.3,1);position:relative;height:100%;}
+.car-card:hover{transform:translateY(-8px);border-color:rgba(43,43,255,.45);box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 0 1px rgba(43,43,255,.15);}
+.car-media{width:100%;aspect-ratio:4/5;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(43,43,255,.18),rgba(0,212,255,.08));}
+.car-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(0.16,1,0.3,1);}
+.car-card:hover .car-media img{transform:scale(1.06);}
+.car-media-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);background:radial-gradient(circle at 30% 20%,rgba(43,43,255,.25) 0%,transparent 50%),radial-gradient(circle at 70% 80%,rgba(0,212,255,.15) 0%,transparent 50%),rgba(8,8,25,.9);}
+.car-overlay-grad{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(2,2,12,.92) 100%);pointer-events:none;}
+.car-info{position:absolute;bottom:0;left:0;right:0;padding:1.4rem 1.5rem;}
+.car-tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent3);background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);padding:.25rem .7rem;border-radius:6px;margin-bottom:.6rem;}
+.car-info h4{font-size:.95rem;font-weight:700;margin-bottom:.3rem;color:#fff;}
+.car-info p{font-size:.74rem;color:var(--text2);line-height:1.5;}
+.car-nav{display:flex;justify-content:center;align-items:center;gap:1.5rem;margin-top:2.5rem;}
+.car-arrow{width:46px;height:46px;border-radius:50%;background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;backdrop-filter:blur(10px);}
+.car-arrow:hover{border-color:rgba(43,43,255,.6);background:var(--glass-hover);box-shadow:0 0 25px rgba(43,43,255,.3);transform:scale(1.08);}
+.car-arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;}
+.car-dots{display:flex;gap:.5rem;}
+.car-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.15);cursor:pointer;transition:all .3s;}
+.car-dot.active{background:linear-gradient(135deg,var(--accent),var(--accent3));width:22px;border-radius:4px;box-shadow:0 0 10px rgba(43,43,255,.5);}
+@media(max-width:900px){.car-slide{flex:0 0 calc(50% - .75rem);}}
+@media(max-width:560px){.car-slide{flex:0 0 100%;}.car-arrow{width:40px;height:40px;}}
+
+/* ============ NEXO CHATBOT ============ */
+.nexo-launcher{position:fixed;bottom:2rem;right:2rem;z-index:5000;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 35px rgba(43,43,255,.5);transition:all .3s cubic-bezier(0.34,1.56,0.64,1);border:none;animation:nexoPulse 3s ease-in-out infinite;}
+.nexo-launcher:hover{transform:scale(1.08);box-shadow:0 12px 45px rgba(43,43,255,.7);}
+.nexo-launcher svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:1.8;}
+.nexo-launcher .nexo-dot{position:absolute;top:-3px;right:-3px;width:14px;height:14px;border-radius:50%;background:#00ff9d;border:2px solid #01010a;}
+@keyframes nexoPulse{0%,100%{box-shadow:0 8px 35px rgba(43,43,255,.5);}50%{box-shadow:0 8px 50px rgba(43,43,255,.8),0 0 0 6px rgba(43,43,255,.08);}}
+.nexo-window{position:fixed;bottom:6.2rem;right:2rem;z-index:5001;width:min(380px,calc(100vw - 2.5rem));height:min(560px,calc(100vh - 9rem));background:rgba(4,4,20,.97);backdrop-filter:blur(40px) saturate(200%);border:1px solid rgba(43,43,255,.25);border-radius:22px;box-shadow:0 30px 90px rgba(0,0,0,.65),0 0 0 1px rgba(43,43,255,.1);display:flex;flex-direction:column;overflow:hidden;transform:translateY(20px) scale(.96);opacity:0;pointer-events:none;transition:all .35s cubic-bezier(0.16,1,0.3,1);}
+.nexo-window.on{transform:translateY(0) scale(1);opacity:1;pointer-events:all;}
+.nexo-window::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent3),var(--accent));}
+.nexo-head{padding:1.2rem 1.3rem;display:flex;align-items:center;gap:.8rem;border-bottom:1px solid rgba(255,255,255,.06);background:rgba(43,43,255,.05);}
+.nexo-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;}
+.nexo-avatar svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;}
+.nexo-avatar .nexo-online{position:absolute;bottom:-1px;right:-1px;width:10px;height:10px;border-radius:50%;background:#00ff9d;border:2px solid #0a0a1a;}
+.nexo-head-info{flex:1;}
+.nexo-head-info h4{font-family:'Orbitron',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:1.5px;}
+.nexo-head-info span{font-size:.66rem;color:#00ff9d;font-weight:500;}
+.nexo-close{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .2s;}
+.nexo-close:hover{background:rgba(255,50,50,.12);border-color:rgba(255,50,50,.3);color:#ff5555;}
+.nexo-body{flex:1;overflow-y:auto;padding:1.3rem;display:flex;flex-direction:column;gap:.9rem;}
+.nexo-body::-webkit-scrollbar{width:3px;}
+.nexo-body::-webkit-scrollbar-thumb{background:rgba(43,43,255,.4);border-radius:2px;}
+.nexo-msg{display:flex;gap:.6rem;max-width:92%;animation:nexoIn .35s ease;}
+@keyframes nexoIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.nexo-msg.bot{align-self:flex-start;}
+.nexo-msg.user{align-self:flex-end;flex-direction:row-reverse;}
+.nexo-msg-av{width:26px;height:26px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;}
+.nexo-msg-av svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:2;}
+.nexo-bubble{padding:.7rem 1rem;border-radius:14px;font-size:.8rem;line-height:1.6;}
+.nexo-msg.bot .nexo-bubble{background:rgba(43,43,255,.08);border:1px solid rgba(43,43,255,.14);color:#e8e8f5;border-bottom-left-radius:4px;}
+.nexo-msg.user .nexo-bubble{background:linear-gradient(135deg,var(--accent),#1a1af0);color:#fff;border-bottom-right-radius:4px;}
+.nexo-quick{display:flex;flex-wrap:wrap;gap:.5rem;padding:.2rem 0 .3rem;}
+.nexo-qbtn{background:rgba(43,43,255,.07);border:1px solid rgba(43,43,255,.22);color:var(--accent3);font-size:.68rem;font-weight:600;padding:.4rem .85rem;border-radius:100px;cursor:pointer;transition:all .2s;font-family:'Sora',sans-serif;}
+.nexo-qbtn:hover{background:rgba(43,43,255,.18);border-color:rgba(43,43,255,.5);color:#fff;}
+.nexo-typing{display:flex;gap:4px;padding:.3rem 0;}
+.nexo-typing span{width:6px;height:6px;border-radius:50%;background:var(--accent3);animation:nexoBounce 1.2s ease-in-out infinite;}
+.nexo-typing span:nth-child(2){animation-delay:.2s;}
+.nexo-typing span:nth-child(3){animation-delay:.4s;}
+@keyframes nexoBounce{0%,60%,100%{transform:translateY(0);opacity:.4;}30%{transform:translateY(-6px);opacity:1;}}
+.nexo-input-area{padding:1rem 1.1rem;border-top:1px solid rgba(255,255,255,.06);display:flex;gap:.6rem;align-items:flex-end;background:rgba(0,0,0,.3);}
+.nexo-input{flex:1;background:rgba(255,255,255,.03);border:1px solid rgba(43,43,255,.18);border-radius:12px;padding:.65rem .9rem;color:#fff;font-size:.8rem;font-family:'Sora',sans-serif;resize:none;outline:none;max-height:80px;line-height:1.5;transition:border-color .2s;}
+.nexo-input::placeholder{color:#555570;}
+.nexo-input:focus{border-color:rgba(43,43,255,.6);}
+.nexo-send{width:38px;height:38px;border-radius:10px;border:none;background:linear-gradient(135deg,var(--accent),var(--accent3));color:#fff;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.nexo-send:hover{transform:scale(1.06);box-shadow:0 0 20px rgba(43,43,255,.4);}
+.nexo-send svg{width:16px;height:16px;}
+@media(max-width:520px){.nexo-window{right:1.2rem;bottom:5.6rem;}.nexo-launcher{right:1.2rem;bottom:1.5rem;}}
+
+/* ============ RECOMENDADOR DE PLAN ============ */
+#recomendador{padding:7rem 4rem;position:relative;z-index:2;background:rgba(1,1,10,.55);backdrop-filter:blur(4px);overflow:hidden;}
+#recomendador::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(43,43,255,.08) 0%,transparent 70%);}
+.rec-inner{max-width:860px;margin:0 auto;position:relative;}
+.rec-header{text-align:center;margin-bottom:3.5rem;}
+.rec-wizard{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:24px;padding:2.8rem;backdrop-filter:blur(20px);}
+.rec-step{display:none;}
+.rec-step.active{display:block;animation:recFadeIn .45s cubic-bezier(0.16,1,0.3,1);}
+@keyframes recFadeIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.rec-step-label{font-size:.65rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--accent2);margin-bottom:.6rem;}
+.rec-question{font-size:1.15rem;font-weight:700;margin-bottom:.5rem;line-height:1.35;}
+.rec-hint{font-size:.8rem;color:var(--text2);margin-bottom:1.8rem;line-height:1.6;}
+.rec-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.9rem;}
+.rec-opt{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.1rem 1rem;cursor:pointer;transition:all .25s;text-align:center;position:relative;}
+.rec-opt:hover{border-color:rgba(43,43,255,.45);background:rgba(43,43,255,.07);transform:translateY(-3px);}
+.rec-opt.selected{border-color:var(--accent);background:rgba(43,43,255,.14);box-shadow:0 0 20px rgba(43,43,255,.2);}
+.rec-opt .rec-opt-icon{display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(43,43,255,0.08);border:1px solid rgba(43,43,255,0.18);border-radius:14px;margin:0 auto 0.8rem;color:var(--accent3);transition:all .3s;}
+.rec-opt:hover .rec-opt-icon{background:rgba(43,43,255,0.18);color:#fff;border-color:rgba(43,43,255,0.4);}
+.rec-opt.selected .rec-opt-icon{background:rgba(43,43,255,0.22);color:#fff;border-color:var(--accent);box-shadow:0 0 16px rgba(43,43,255,0.3);}
+.rec-opt .rec-opt-label{font-size:.82rem;font-weight:600;color:var(--text);}
+.rec-opt .rec-opt-sub{font-size:.7rem;color:var(--text2);margin-top:.2rem;}
+.rec-opt.selected::after{content:'';position:absolute;top:8px;right:10px;font-size:.7rem;color:var(--accent3);font-weight:700;}
+.rec-budget-row{display:flex;gap:.8rem;flex-wrap:wrap;}
+.rec-budget-btn{flex:1;min-width:140px;padding:.9rem 1rem;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);color:var(--text);font-size:.82rem;font-weight:600;cursor:pointer;transition:all .25s;font-family:'Sora',sans-serif;text-align:center;}
+.rec-budget-btn:hover{border-color:rgba(43,43,255,.45);background:rgba(43,43,255,.07);}
+.rec-budget-btn.selected{border-color:var(--accent);background:rgba(43,43,255,.14);color:var(--accent3);}
+.rec-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;gap:1rem;}
+.rec-back{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--text2);padding:.7rem 1.6rem;border-radius:10px;cursor:pointer;font-size:.8rem;font-weight:600;transition:all .2s;font-family:'Sora',sans-serif;}
+.rec-back:hover{color:#fff;border-color:rgba(255,255,255,.2);}
+.rec-next{background:linear-gradient(135deg,var(--accent),#1a1af0);color:#fff;border:none;padding:.8rem 2rem;border-radius:10px;cursor:pointer;font-size:.85rem;font-weight:700;transition:all .25s;font-family:'Sora',sans-serif;letter-spacing:.5px;}
+.rec-next:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(43,43,255,.45);}
+.rec-next:disabled{opacity:.4;cursor:not-allowed;transform:none;}
+.rec-progress{height:3px;background:rgba(255,255,255,.06);border-radius:10px;margin-bottom:2.2rem;overflow:hidden;}
+.rec-progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent3));border-radius:10px;transition:width .5s cubic-bezier(0.16,1,0.3,1);box-shadow:0 0 8px rgba(43,43,255,.5);}
+/* resultado */
+.rec-result{display:none;}
+.rec-result.active{display:block;animation:recFadeIn .5s ease;}
+.rec-result-header{text-align:center;margin-bottom:2rem;}
+.rec-result-badge{display:inline-block;font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:3px;padding:.4rem 1.2rem;border-radius:100px;background:linear-gradient(135deg,rgba(43,43,255,.3),rgba(0,212,255,.15));border:1px solid rgba(43,43,255,.5);color:var(--accent3);margin-bottom:1rem;}
+.rec-result-title{font-size:1.6rem;font-weight:700;margin-bottom:.5rem;}
+.rec-result-why{font-size:.85rem;color:var(--text2);line-height:1.8;margin-bottom:2rem;background:rgba(43,43,255,.05);border-left:2px solid var(--accent);padding:.9rem 1.2rem;border-radius:0 10px 10px 0;}
+.rec-result-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;}
+.rec-result-card{background:rgba(43,43,255,.07);border:1px solid rgba(43,43,255,.18);border-radius:14px;padding:1.2rem 1.4rem;}
+.rec-result-card h4{font-size:.82rem;font-weight:700;margin-bottom:.5rem;color:var(--accent3);}
+.rec-result-card ul{list-style:none;display:flex;flex-direction:column;gap:.35rem;}
+.rec-result-card ul li{font-size:.76rem;color:var(--text2);display:flex;gap:.5rem;align-items:flex-start;}
+.rec-result-card ul li::before{content:'';color:var(--accent);font-weight:700;flex-shrink:0;}
+.rec-price-box{background:linear-gradient(135deg,rgba(43,43,255,.15),rgba(0,212,255,.07));border:1px solid rgba(43,43,255,.35);border-radius:16px;padding:1.5rem 1.8rem;text-align:center;margin-bottom:1.5rem;}
+.rec-price-label{font-size:.68rem;color:var(--text2);letter-spacing:2px;text-transform:uppercase;margin-bottom:.4rem;}
+.rec-price-val{font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.rec-price-note{font-size:.72rem;color:var(--text2);margin-top:.3rem;}
+.rec-extras{background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.15);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.8rem;}
+.rec-extras h4{font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent3);margin-bottom:.8rem;}
+.rec-extras ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;}
+.rec-extras ul li{font-size:.78rem;color:var(--text2);display:flex;gap:.6rem;align-items:flex-start;}
+.rec-extras ul li::before{content:'';flex-shrink:0;}
+.rec-result-actions{display:flex;gap:.8rem;flex-wrap:wrap;}
+.rec-cta-main{flex:1;padding:.95rem;background:linear-gradient(135deg,var(--accent),#1a1af0);color:#fff;border:none;border-radius:12px;font-size:.85rem;font-weight:700;cursor:pointer;transition:all .25s;font-family:'Sora',sans-serif;letter-spacing:.5px;}
+.rec-cta-main:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(43,43,255,.5);}
+.rec-cta-restart{padding:.9rem 1.4rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--text2);border-radius:12px;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Sora',sans-serif;}
+.rec-cta-restart:hover{color:#fff;border-color:rgba(255,255,255,.2);}
+@media(max-width:700px){.rec-result-cards{grid-template-columns:1fr;}.rec-options{grid-template-columns:1fr 1fr;}.rec-wizard{padding:1.8rem 1.2rem;}}
+
+/* ============ COMPARATIVA PLAN GROWTH ============ */
+.comparativa-wrapper{
+  overflow-x:auto;
+  margin-top:2rem;
+}
+.comparativa-table{
+  width:100%;
+  border-collapse:collapse;
+  background:rgba(8,8,25,.6);
+  backdrop-filter:blur(10px);
+  border-radius:20px;
+  overflow:hidden;
+}
+.comparativa-table th, .comparativa-table td{
+  padding:1.2rem 1rem;
+  text-align:center;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.comparativa-table th{
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--accent2);
+  background:rgba(43,43,255,.08);
+}
+.comparativa-table td{ font-size:.8rem; color:var(--text2); }
+.comparativa-table .feature-td{ text-align:left; font-weight:600; color:var(--text); }
+.comparativa-table .check{ color:#00d4ff; font-size:1.2rem; font-weight:700; }
+.comparativa-table .cross{ color:#ff4444; font-size:1rem; }
+.comparativa-table .nexuz-highlight{ background:rgba(43,43,255,.12); }
+.comparativa-table .price-highlight{
+  font-family:'Orbitron',sans-serif;
+  font-weight:700;
+  color:var(--accent);
+}
+
+/* ============ FAQ ACORDEON ============ */
+.faq-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.2rem;
+  margin-top:2rem;
+}
+.faq-item{
+  background:rgba(8,8,25,.6);
+  backdrop-filter:blur(10px);
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.05);
+  overflow:hidden;
+  cursor:pointer;
+  transition:all .3s;
+}
+.faq-item:hover{ border-color:rgba(43,43,255,.3); }
+.faq-question{
+  padding:1.2rem 1.5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:600;
+  font-size:.85rem;
+}
+.faq-question .icon{ transition:transform .3s; color:var(--accent3); font-size:1rem; }
+.faq-item.active .faq-question .icon{ transform:rotate(180deg); }
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .4s ease;
+  padding:0 1.5rem;
+}
+.faq-item.active .faq-answer{
+  max-height:200px;
+  padding:0 1.5rem 1.2rem;
+}
+.faq-answer p{ font-size:.78rem; color:var(--text2); line-height:1.7; }
+
+/* ============ CONTACT ============ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.c-form{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem;}
+.fg{display:flex;flex-direction:column;gap:.38rem;}
+.fg label{font-size:.68rem;font-weight:600;color:var(--text2);letter-spacing:1.5px;text-transform:uppercase;}
+.fg input,.fg select,.fg textarea{
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(255,255,255,.06);
+  color:var(--text);padding:.82rem 1rem;
+  border-radius:12px;font-size:.85rem;
+  transition:all .3s;outline:none;
+  backdrop-filter:blur(8px);
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:rgba(43,43,255,.5);
+  background:rgba(43,43,255,.04);
+  box-shadow:0 0 0 3px rgba(43,43,255,.08);
+}
+.fg textarea{resize:vertical;min-height:100px;}
+.fg select option{background:#07071a;color:var(--text);}
+.c-submit{
+  width:100%;padding:1rem;
+  background:linear-gradient(135deg,var(--accent),#1a1af0);
+  color:#fff;border:none;border-radius:12px;
+  font-size:.88rem;font-weight:700;cursor:pointer;
+  letter-spacing:.8px;text-transform:uppercase;
+  transition:all .3s;margin-top:.2rem;
+  box-shadow:0 8px 30px rgba(43,43,255,.25);
+}
+.c-submit:hover{transform:translateY(-2px);box-shadow:0 14px 45px rgba(43,43,255,.5);}
+.c-info{margin-top:2rem;}
+.c-item{display:flex;align-items:center;gap:1.2rem;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.04);}
+.c-icon{
+  width:46px;height:46px;
+  background:rgba(43,43,255,.06);
+  border:1px solid rgba(43,43,255,.14);
+  border-radius:14px;display:flex;align-items:center;justify-content:center;
+  color:var(--accent3);flex-shrink:0;transition:all .25s;
+  backdrop-filter:blur(8px);
+}
+.c-item:hover .c-icon{background:rgba(43,43,255,.15);box-shadow:0 0 30px rgba(43,43,255,.3);transform:scale(1.08);}
+.c-icon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.75;}
+.c-text h4{font-size:.68rem;color:var(--text2);margin-bottom:.18rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
+.c-text a,.c-text p{font-size:.87rem;color:var(--text);text-decoration:none;font-weight:500;transition:color .2s;}
+.c-text a:hover{color:var(--accent3);}
+
+/* ============ WORK ============ */
+.work-form{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;text-align:left;}
+.work-form .fw{grid-column:1/-1;}
+
+/* ============ CART DRAWER ============ */
+.cart-overlay{
+  position:fixed;inset:0;z-index:1500;
+  background:rgba(0,0,0,.7);backdrop-filter:blur(10px);
+  opacity:0;pointer-events:none;transition:opacity .35s ease;
+}
+.cart-overlay.on{opacity:1;pointer-events:all;}
+.cart-drawer{
+  position:fixed;top:0;right:0;bottom:0;
+  width:min(440px,100vw);
+  background:rgba(4,4,20,.95);
+  backdrop-filter:blur(40px) saturate(200%);
+  border-left:1px solid rgba(43,43,255,.18);
+  z-index:1600;
+  transform:translateX(100%);
+  transition:transform .45s cubic-bezier(0.16,1,0.3,1);
+  display:flex;flex-direction:column;
+  box-shadow:-20px 0 60px rgba(0,0,0,.6);
+  overflow:hidden;
+}
+.cart-drawer.on{transform:translateX(0);}
+.cart-drawer::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent3),var(--accent));
+}
+.cart-head{
+  padding:1.8rem 2rem 1.4rem;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.cart-head h2{
+  font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;
+  letter-spacing:2px;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.cart-close{
+  width:36px;height:36px;border-radius:10px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;transition:all .2s;
+}
+.cart-close:hover{background:rgba(255,50,50,.1);border-color:rgba(255,50,50,.3);color:#ff5555;}
+.cart-body{flex:1;overflow-y:auto;padding:1.5rem 2rem;}
+.cart-body::-webkit-scrollbar{width:2px;}
+.cart-body::-webkit-scrollbar-thumb{background:rgba(43,43,255,.5);}
+.cart-empty{
+  text-align:center;padding:4rem 0;
+  font-size:.85rem;color:var(--text2);
+}
+.cart-empty-icon{font-size:2.5rem;margin-bottom:1rem;opacity:.4;color:var(--accent2);}
+.cart-item{
+  display:flex;align-items:center;gap:1rem;
+  padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.04);
+  animation:slideIn .3s ease;
+}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px);}to{opacity:1;transform:translateX(0);}}
+.cart-item-info{flex:1;}
+.cart-item-name{font-size:.82rem;font-weight:600;margin-bottom:.18rem;}
+.cart-item-type{font-size:.68rem;color:var(--text2);letter-spacing:.5px;text-transform:uppercase;}
+.cart-item-price{
+  font-family:'Orbitron',sans-serif;font-size:.85rem;font-weight:700;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-right:.5rem;
+}
+.cart-remove{
+  width:28px;height:28px;border-radius:7px;
+  background:rgba(255,50,50,.06);border:1px solid rgba(255,50,50,.1);
+  color:rgba(255,100,100,.6);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:.75rem;
+  transition:all .2s;flex-shrink:0;
+}
+.cart-remove:hover{background:rgba(255,50,50,.15);border-color:rgba(255,50,50,.4);color:#ff5555;}
+.cart-foot{
+  padding:1.4rem 2rem 2rem;
+  border-top:1px solid rgba(255,255,255,.05);
+}
+.cart-subtotal{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:.5rem;
+}
+.cart-subtotal span{font-size:.75rem;color:var(--text2);letter-spacing:.5px;text-transform:uppercase;}
+.cart-total-val{
+  font-family:'Orbitron',sans-serif;font-size:1.6rem;font-weight:700;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.cart-note{font-size:.68rem;color:var(--text2);margin-bottom:1.2rem;line-height:1.6;font-style:italic;}
+.cart-checkout{
+  width:100%;padding:1rem;
+  background:linear-gradient(135deg,var(--accent),#1a1af0);
+  color:#fff;border:none;border-radius:12px;
+  font-size:.84rem;font-weight:700;cursor:pointer;letter-spacing:.8px;
+  text-transform:uppercase;transition:all .3s;
+  box-shadow:0 8px 30px rgba(43,43,255,.25);
+}
+.cart-checkout:hover{box-shadow:0 14px 45px rgba(43,43,255,.55);transform:translateY(-2px);}
+.cart-clear{
+  width:100%;padding:.7rem;margin-top:.6rem;
+  background:transparent;color:var(--text2);
+  border:1px solid rgba(255,255,255,.06);border-radius:12px;
+  font-size:.74rem;cursor:pointer;transition:all .2s;letter-spacing:.5px;
+}
+.cart-clear:hover{color:#ff5555;border-color:rgba(255,50,50,.25);}
+
+/* ============ MODAL ============ */
+.overlay{
+  position:fixed;inset:0;z-index:2000;
+  background:rgba(0,0,0,.88);backdrop-filter:blur(20px);
+  display:flex;align-items:center;justify-content:center;padding:2rem;
+  opacity:0;pointer-events:none;transition:opacity .35s ease;
+}
+.overlay.on{opacity:1;pointer-events:all;}
+.modal{
+  background:rgba(5,5,22,.95);
+  border:1px solid rgba(43,43,255,.25);
+  border-radius:26px;padding:2.6rem;
+  max-width:560px;width:100%;max-height:88vh;overflow-y:auto;
+  position:relative;box-shadow:0 0 120px rgba(43,43,255,.2);
+  transform:scale(.95) translateY(20px);
+  transition:transform .4s cubic-bezier(0.16,1,0.3,1);
+  backdrop-filter:blur(40px);
+}
+.overlay.on .modal{transform:scale(1) translateY(0);}
+.modal::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:26px 26px 0 0;
+  background:linear-gradient(90deg,var(--accent),var(--accent3),var(--accent));
+}
+.modal::-webkit-scrollbar{width:2px;}
+.modal::-webkit-scrollbar-thumb{background:rgba(43,43,255,.5);}
+.m-close{
+  position:absolute;top:1.3rem;right:1.5rem;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  color:var(--text2);width:34px;height:34px;border-radius:9px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:.85rem;
+  transition:all .2s;
+}
+.m-close:hover{background:rgba(255,50,50,.1);border-color:rgba(255,50,50,.3);color:#ff5555;}
+.m-label{font-size:.62rem;font-weight:700;letter-spacing:4px;color:var(--accent2);margin-bottom:.6rem;text-transform:uppercase;}
+.m-title{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.6rem;letter-spacing:2px;}
+.m-quote{font-size:.82rem;color:var(--text2);font-style:italic;margin-bottom:1.2rem;line-height:1.65;}
+.m-desc{font-size:.84rem;color:var(--text2);line-height:1.9;}
+.m-pricing{
+  display:flex;gap:2rem;
+  background:rgba(43,43,255,.05);
+  border:1px solid rgba(43,43,255,.14);
+  border-radius:16px;padding:1.2rem 1.5rem;margin:1.5rem 0;
+  backdrop-filter:blur(8px);
+}
+.m-plabel{font-size:.66rem;color:var(--text2);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:1px;}
+.m-pvalue{
+  font-family:'Orbitron',sans-serif;font-size:1.15rem;font-weight:700;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.m-pnote{font-size:.66rem;color:var(--text2);margin-top:.2rem;}
+.m-ftitle{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text2);margin-bottom:.8rem;}
+.m-flist{list-style:none;margin-bottom:1.5rem;}
+.m-flist li{
+  font-size:.82rem;color:var(--text2);padding:.38rem 0;
+  display:flex;gap:.65rem;align-items:flex-start;line-height:1.55;
+  border-bottom:1px solid rgba(255,255,255,.03);
+}
+.m-flist li .ck{
+  width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:1px;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  display:flex;align-items:center;justify-content:center;font-size:.5rem;color:#fff;
+}
+.m-note{font-size:.73rem;color:rgba(255,255,255,.25);line-height:1.65;margin-bottom:1.5rem;font-style:italic;}
+.m-actions{display:flex;flex-direction:column;gap:.6rem;}
+.m-cta{
+  width:100%;padding:.9rem;
+  background:linear-gradient(135deg,var(--accent),#1a1af0);
+  color:#fff;border:none;border-radius:12px;
+  font-size:.84rem;font-weight:700;cursor:pointer;letter-spacing:.7px;
+  text-transform:uppercase;transition:all .25s;
+  box-shadow:0 6px 25px rgba(43,43,255,.25);
+}
+.m-cta:hover{box-shadow:0 10px 40px rgba(43,43,255,.5);}
+.m-cart{
+  width:100%;padding:.8rem;
+  background:rgba(0,212,255,.06);color:var(--accent3);
+  border:1px solid rgba(0,212,255,.2);
+  border-radius:12px;font-size:.8rem;font-weight:600;cursor:pointer;
+  letter-spacing:.5px;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.5rem;
+}
+.m-cart:hover{background:rgba(0,212,255,.14);border-color:rgba(0,212,255,.4);}
+
+/* ============ FOOTER ============ */
+footer{
+  background:rgba(2,2,14,.9);backdrop-filter:blur(20px);
+  border-top:1px solid rgba(43,43,255,.1);
+  padding:2.8rem 4rem;position:relative;z-index:2;
+}
+.foot-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1.5rem;
+}
+.foot-logo-img{height:24px;width:auto;filter:drop-shadow(0 0 10px rgba(43,43,255,.5));transition:filter .3s;}
+.foot-logo-img:hover{filter:drop-shadow(0 0 24px rgba(43,43,255,.9));}
+.foot-copy{font-size:.73rem;color:rgba(255,255,255,.25);letter-spacing:.3px;}
+.socials{display:flex;gap:.6rem;}
+.soc{
+  width:38px;height:38px;border:1px solid rgba(255,255,255,.06);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text2);transition:all .25s;text-decoration:none;
+  backdrop-filter:blur(8px);
+}
+.soc svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.75;}
+.soc:hover{border-color:rgba(43,43,255,.5);color:var(--accent3);transform:translateY(-4px);background:rgba(43,43,255,.1);box-shadow:0 8px 25px rgba(43,43,255,.2);}
+
+/* ============ TOAST ============ */
+.toast{
+  position:fixed;bottom:2rem;right:2rem;
+  background:rgba(4,4,22,.95);color:var(--text);
+  border:1px solid rgba(43,43,255,.3);
+  padding:.85rem 1.5rem;border-radius:14px;
+  font-size:.82rem;font-weight:600;z-index:3000;
+  transform:translateY(80px);opacity:0;
+  transition:all .45s cubic-bezier(0.16,1,0.3,1);
+  box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 0 1px rgba(43,43,255,.1);
+  backdrop-filter:blur(20px);
+  display:flex;align-items:center;gap:.6rem;
+}
+.toast::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--glow);flex-shrink:0;}
+.toast.on{transform:translateY(0);opacity:1;}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1100px){.srv-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:900px){
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+  .about-grid,.plans-grid,.contact-grid,.work-form{grid-template-columns:1fr;}
+  #nosotros > div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;gap:2.5rem !important;}
+  .plans-grid{gap:1rem;}
+  .sec,.sec-full,#portafolio{padding:5rem 1.5rem;}
+  footer{padding:2rem 1.5rem;}
+  .srv-grid{grid-template-columns:1fr 1fr;gap:1rem;}
+  .faq-grid{grid-template-columns:1fr;}
+}
+@media(max-width:520px){
+  .srv-grid{grid-template-columns:1fr;}
+  nav{padding:0 1.2rem;}
+  .sec,.sec-full,#portafolio{padding:4rem 1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+
+<!-- GLOBAL PARTICLE CANVAS -->
+<canvas id="globalCanvas"></canvas>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a class="nav-logo-link" onclick="scroll2('inicio')"><canvas id="navLogoCanvas" class="nav-logo-img" title="NEXUZ"></canvas></a>
+  <ul class="nav-links">
+    <li><a onclick="scroll2('nosotros')">Nosotros</a></li>
+    <li><a onclick="scroll2('servicios')">Servicios</a></li>
+    <li><a onclick="scroll2('recomendador')">¿Qué plan necesito?</a></li>
+    <li><a onclick="scroll2('planes')">Planes</a></li>
+    <li><a onclick="scroll2('comparativa')">Comparativa</a></li>
+    <li><a onclick="scroll2('portafolio')">Portafolio</a></li>
+    <li><a onclick="scroll2('contacto')">Contacto</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-nav-cart" onclick="openCart()" title="Carrito">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+    <a class="btn-cta" onclick="scroll2('contacto')">Contáctanos</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="hero-aura"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-logo-wrap"><canvas id="heroLogoCanvas" class="hero-logo-img" title="NEXUZ Logo"></canvas></div>
+    <div class="hero-slogan">Move smarter, grow faster.</div>
+  </div>
+  <div class="scroll-hint"><span>Descubrir</span><div class="scroll-arrow"></div></div>
+</section>
+
+<!-- NOSOTROS -->
+<div class="sec" id="nosotros">
+  <div class="reveal"><div class="label">Sobre nosotros</div></div>
+  <div class="reveal delay-1"><h2 class="title">Tu crecimiento digital,<br><em>nuestra misión.</em></h2></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem;">
+    <div class="about-text reveal delay-2">
+      <p>En NEXUZ combinamos inteligencia artificial, estrategia y creatividad para llevar tu negocio al siguiente nivel. Somos rápidos, confiables y obsesivamente orientados a resultados.</p>
+      <p>Trabajamos con emprendedores, freelancers y negocios pequeños y medianos que quieren crecer en serio, sin complicarse la vida. Si tu tiempo vale, nosotros lo sabemos aprovechar.</p>
+      <div class="highlight">"Automatizamos lo que se puede automatizar, optimizamos lo que se puede optimizar y creamos lo que necesita ser creado."</div>
+    </div>
+    <div class="reveal delay-3" style="display:flex;align-items:center;justify-content:center;">
+      <img src="nexuz-ecosystem.png" alt="NEXUZ — Ecosistema digital completo" style="width:100%;max-width:520px;height:auto;border-radius:18px;display:block;filter:drop-shadow(0 0 40px rgba(43,43,255,0.35));">
+    </div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<div class="sec-full" id="servicios">
+  <div class="sec-inner">
+    <div class="reveal"><div class="label">Lo que hacemos</div></div>
+    <div class="reveal delay-1"><h2 class="title">Tecnología que trabaja<br><em>por ti.</em></h2></div>
+    <div class="srv-grid">
+      <div class="srv-card glass reveal delay-1">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h3>Gestión de Redes Sociales</h3>
+        <p>Contenido estratégico, diseñado con IA, publicado consistentemente. Tu marca siempre activa y creciendo.</p>
+      </div>
+      <div class="srv-card glass reveal delay-2">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8" cy="16" r="1"/><circle cx="16" cy="16" r="1"/><path d="M9 22v-2M15 22v-2M12 11V9M12 5a3 3 0 0 1 3 3H9a3 3 0 0 1 3-3z"/></svg></div>
+        <h3>Chatbots Inteligentes</h3>
+        <p>Responde a tus clientes al instante, 24/7. Chatbots para WhatsApp e Instagram que convierten consultas en ventas.</p>
+      </div>
+      <div class="srv-card glass reveal delay-3">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Automatizaciones con IA</h3>
+        <p>Elimina tareas repetitivas. Conecta tus herramientas y deja que los flujos automáticos escalen tu negocio.</p>
+      </div>
+      <div class="srv-card glass reveal delay-4">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3>Estrategia & Reportes</h3>
+        <p>Datos claros, decisiones inteligentes. Reportes mensuales y sesiones estratégicas para nunca perder el rumbo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RECOMENDADOR DE PLAN -->
+<div id="recomendador">
+  <div class="rec-inner">
+    <div class="rec-header reveal">
+      <div class="label" style="justify-content:center">Encuentra tu plan ideal</div>
+      <h2 class="title" style="text-align:center">¿No sabes qué plan<br><em>necesitas?</em></h2>
+      <p class="sub" style="margin:0 auto;text-align:center;max-width:520px;">Responde 5 preguntas rápidas y te recomendamos la solución exacta para tu negocio y presupuesto.</p>
+    </div>
+    <div class="rec-wizard reveal delay-2">
+      <div class="rec-progress"><div class="rec-progress-fill" id="recBar" style="width:0%"></div></div>
+
+      <!-- PASO 1: Tipo de negocio -->
+      <div class="rec-step active" id="recStep1">
+        <div class="rec-step-label">Pregunta 1 de 5</div>
+        <div class="rec-question">¿Qué tipo de negocio tienes?</div>
+        <div class="rec-hint">Esto nos ayuda a entender tu contexto y dónde están tus clientes.</div>
+        <div class="rec-options">
+          <div class="rec-opt" onclick="recSelect(this,'tipo','local')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+            <div class="rec-opt-label">Negocio local</div><div class="rec-opt-sub">Tienda, restaurante, clínica, salón...</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'tipo','emprendedor')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+            <div class="rec-opt-label">Emprendedor</div><div class="rec-opt-sub">Arrancando algo nuevo</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'tipo','freelancer')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+            <div class="rec-opt-label">Freelancer / Consultor</div><div class="rec-opt-sub">Servicios profesionales independientes</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'tipo','empresa')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12.01"/></svg></span>
+            <div class="rec-opt-label">Empresa mediana</div><div class="rec-opt-sub">Equipo de 5+ personas</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'tipo','ecommerce')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+            <div class="rec-opt-label">E-commerce</div><div class="rec-opt-sub">Vendo productos en línea</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'tipo','otro')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+            <div class="rec-opt-label">Otro</div><div class="rec-opt-sub">No encaja en los anteriores</div>
+          </div>
+        </div>
+        <div class="rec-nav"><div></div><button class="rec-next" id="recNext1" onclick="recGoTo(2)" disabled>Siguiente →</button></div>
+      </div>
+
+      <!-- PASO 2: Objetivo principal -->
+      <div class="rec-step" id="recStep2">
+        <div class="rec-step-label">Pregunta 2 de 5</div>
+        <div class="rec-question">¿Cuál es tu objetivo principal ahora mismo?</div>
+        <div class="rec-hint">Selecciona el que más te urge resolver.</div>
+        <div class="rec-options">
+          <div class="rec-opt" onclick="recSelect(this,'objetivo','clientes')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+            <div class="rec-opt-label">Conseguir más clientes</div><div class="rec-opt-sub">Aumentar ventas y leads</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'objetivo','presencia')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+            <div class="rec-opt-label">Mejorar mi presencia digital</div><div class="rec-opt-sub">Redes, imagen y contenido</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'objetivo','automatizar')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+            <div class="rec-opt-label">Automatizar procesos</div><div class="rec-opt-sub">Ahorrar tiempo y eliminar tareas manuales</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'objetivo','atencion')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+            <div class="rec-opt-label">Atender mejor a mis clientes</div><div class="rec-opt-sub">Respuestas rápidas, 24/7</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'objetivo','todo')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            <div class="rec-opt-label">Todo lo anterior</div><div class="rec-opt-sub">Quiero crecer en todos los frentes</div>
+          </div>
+        </div>
+        <div class="rec-nav"><button class="rec-back" onclick="recGoTo(1)">← Atrás</button><button class="rec-next" id="recNext2" onclick="recGoTo(3)" disabled>Siguiente →</button></div>
+      </div>
+
+      <!-- PASO 3: Redes actuales -->
+      <div class="rec-step" id="recStep3">
+        <div class="rec-step-label">Pregunta 3 de 5</div>
+        <div class="rec-question">¿En qué redes sociales tienes o quieres presencia?</div>
+        <div class="rec-hint">Puedes seleccionar más de una.</div>
+        <div class="rec-options" id="recRedesOpts">
+          <div class="rec-opt rec-multi" onclick="recToggle(this,'redes','instagram')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+            <div class="rec-opt-label">Instagram</div>
+          </div>
+          <div class="rec-opt rec-multi" onclick="recToggle(this,'redes','facebook')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
+            <div class="rec-opt-label">Facebook</div>
+          </div>
+          <div class="rec-opt rec-multi" onclick="recToggle(this,'redes','tiktok')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></span>
+            <div class="rec-opt-label">TikTok</div>
+          </div>
+          <div class="rec-opt rec-multi" onclick="recToggle(this,'redes','ninguna')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+            <div class="rec-opt-label">Ninguna todavía</div><div class="rec-opt-sub">Quiero empezar desde cero</div>
+          </div>
+        </div>
+        <div class="rec-nav"><button class="rec-back" onclick="recGoTo(2)">← Atrás</button><button class="rec-next" id="recNext3" onclick="recGoTo(4)" disabled>Siguiente →</button></div>
+      </div>
+
+      <!-- PASO 4: Prioridad de servicio -->
+      <div class="rec-step" id="recStep4">
+        <div class="rec-step-label">Pregunta 4 de 5</div>
+        <div class="rec-question">¿Qué servicio priorizas más?</div>
+        <div class="rec-hint">Elige el que más impacto tendría en tu negocio hoy.</div>
+        <div class="rec-options">
+          <div class="rec-opt" onclick="recSelect(this,'prioridad','contenido')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+            <div class="rec-opt-label">Contenido y redes</div><div class="rec-opt-sub">Posts, reels, stories consistentes</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'prioridad','chatbot')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8" cy="16" r="1"/><circle cx="16" cy="16" r="1"/><path d="M12 11V9M12 5a3 3 0 0 1 3 3H9a3 3 0 0 1 3-3z"/></svg></span>
+            <div class="rec-opt-label">Chatbot 24/7</div><div class="rec-opt-sub">Nunca perder un lead</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'prioridad','automatizacion')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></span>
+            <div class="rec-opt-label">Automatizaciones</div><div class="rec-opt-sub">Conectar sistemas y ahorrar tiempo</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'prioridad','foto')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+            <div class="rec-opt-label">Fotografía y video</div><div class="rec-opt-sub">Material visual profesional</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'prioridad','estrategia')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+            <div class="rec-opt-label">Estrategia y reportes</div><div class="rec-opt-sub">Datos claros y decisiones inteligentes</div>
+          </div>
+          <div class="rec-opt" onclick="recSelect(this,'prioridad','combinado')">
+            <span class="rec-opt-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <div class="rec-opt-label">Todo combinado</div><div class="rec-opt-sub">Quiero el paquete más completo</div>
+          </div>
+        </div>
+        <div class="rec-nav"><button class="rec-back" onclick="recGoTo(3)">← Atrás</button><button class="rec-next" id="recNext4" onclick="recGoTo(5)" disabled>Siguiente →</button></div>
+      </div>
+
+      <!-- PASO 5: Presupuesto -->
+      <div class="rec-step" id="recStep5">
+        <div class="rec-step-label">Pregunta 5 de 5</div>
+        <div class="rec-question">¿Cuál es tu presupuesto mensual aproximado?</div>
+        <div class="rec-hint">Todos nuestros precios ya incluyen IVA. Sé honesto, adaptamos la solución a tu realidad.</div>
+        <div class="rec-budget-row">
+          <button class="rec-budget-btn" onclick="recBudget(this,'menos10')">Menos de $10,000 MXN</button>
+          <button class="rec-budget-btn" onclick="recBudget(this,'10-15')">$10,000 – $15,000 MXN</button>
+          <button class="rec-budget-btn" onclick="recBudget(this,'15-18')">$15,000 – $18,000 MXN</button>
+          <button class="rec-budget-btn" onclick="recBudget(this,'18-22')">$18,000 – $22,000 MXN</button>
+          <button class="rec-budget-btn" onclick="recBudget(this,'mas22')">Más de $22,000 MXN</button>
+        </div>
+        <div class="rec-nav"><button class="rec-back" onclick="recGoTo(4)">← Atrás</button><button class="rec-next" id="recNext5" onclick="recCalcular()" disabled>Ver mi recomendación →</button></div>
+      </div>
+
+      <!-- RESULTADO -->
+      <div class="rec-result" id="recResultado"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PLANES CON PRECIOS ACTUALIZADOS -->
+<div class="sec" id="planes">
+  <div class="reveal"><div class="label">Planes mensuales</div></div>
+  <div class="reveal delay-1"><h2 class="title">Elige tu nivel de<br><em>crecimiento.</em></h2></div>
+  <div class="reveal delay-2"><p class="sub">Tarifa de implementación única + mensualidad recurrente. Haz clic en cualquier plan para ver todos los detalles o agrégalo directo al carrito.</p></div>
+  <div class="plans-grid">
+    <div class="plan glass reveal delay-2" onclick="openPlan('starter')">
+      <div class="plan-nm">STARTER</div>
+      <div class="plan-tg">"Tu primer paso hacia una presencia digital que trabaja para ti."</div>
+      <div class="plan-act">Implementación: <strong>$15,000 MXN</strong></div>
+      <div class="plan-price">$13,000 <span>MXN/mes</span></div>
+      <div class="divider"></div>
+      <ul class="plan-list"><li><span class="ck"></span>12 publicaciones al mes</li><li><span class="ck"></span>Diseño con identidad</li><li><span class="ck"></span>Copies con IA</li><li><span class="ck"></span>1 red social</li><li><span class="ck"></span>Reporte mensual</li></ul>
+      <div class="plan-actions" onclick="event.stopPropagation()">
+        <button class="plan-btn" onclick="scroll2('contacto')">Comenzar ahora</button>
+        <button class="plan-cart-btn" onclick="addToCart('starter','Plan STARTER','$13,000 MXN/mes')">Agregar al carrito</button>
+        <button class="plan-btn2" onclick="openPlan('starter')">Ver detalles →</button>
+      </div>
+    </div>
+    <div class="plan glass hot reveal delay-3" onclick="openPlan('growth')">
+      <div class="plan-nm">GROWTH</div>
+      <div class="plan-tg">"Para negocios que quieren convertir seguidores en clientes."</div>
+      <div class="plan-act">Implementación: <strong>$18,000 MXN</strong></div>
+      <div class="plan-price">$16,000 <span>MXN/mes</span></div>
+      <div class="divider"></div>
+      <ul class="plan-list"><li><span class="ck"></span>20 publicaciones + stories</li><li><span class="ck"></span>2 reels al mes</li><li><span class="ck"></span>2 redes sociales</li><li><span class="ck"></span>Chatbot básico</li><li><span class="ck"></span>Sesión mensual de fotos</li></ul>
+      <div class="plan-actions" onclick="event.stopPropagation()">
+        <button class="plan-btn" onclick="scroll2('contacto')">Comenzar ahora</button>
+        <button class="plan-cart-btn" onclick="addToCart('growth','Plan GROWTH','$16,000 MXN/mes')">Agregar al carrito</button>
+        <button class="plan-btn2" onclick="openPlan('growth')">Ver detalles →</button>
+      </div>
+    </div>
+    <div class="plan glass reveal delay-4" onclick="openPlan('scale')">
+      <div class="plan-nm">SCALE</div>
+      <div class="plan-tg">"Para quienes juegan en serio y quieren dominar su mercado."</div>
+      <div class="plan-act">Implementación: <strong>$0 MXN</strong> <span style="color:#00d4ff;">(Sin tarifa)</span></div>
+      <div class="plan-price">$20,000 <span>MXN/mes</span></div>
+      <div class="divider"></div>
+      <ul class="plan-list"><li><span class="ck"></span>Todo Growth</li><li><span class="ck"></span>3 redes + 4 reels</li><li><span class="ck"></span>Chatbot avanzado</li><li><span class="ck"></span>1 automatización</li><li><span class="ck"></span>Sesión 2hrs ilimitada</li></ul>
+      <div class="plan-actions" onclick="event.stopPropagation()">
+        <button class="plan-btn" onclick="scroll2('contacto')">Comenzar ahora</button>
+        <button class="plan-cart-btn" onclick="addToCart('scale','Plan SCALE','$20,000 MXN/mes')">Agregar al carrito</button>
+        <button class="plan-btn2" onclick="openPlan('scale')">Ver detalles →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADICIONALES -->
+<div class="sec-full" id="adicionales">
+  <div class="sec-inner">
+    <div class="reveal"><div class="label">Servicios adicionales</div></div>
+    <div class="reveal delay-1"><h2 class="title">Soluciones puntuales,<br><em>resultados inmediatos.</em></h2></div>
+    <div class="reveal delay-2"><p class="sub">¿Necesitas algo específico? Contrata solo lo que necesitas, cuando lo necesitas. Sin compromisos mensuales.</p></div>
+    <div class="ind-grid">
+      <div class="ind-card glass reveal delay-1" onclick="openSvc('cb')"><div class="ind-info"><h4>Chatbot Básico</h4><p>WhatsApp o Instagram · Instalación completa</p></div><div class="ind-right"><div class="ind-price">$6,000</div><button class="ind-add-btn" id="btn-cb" onclick="event.stopPropagation();addToCart('cb','Chatbot Básico','$6,000 MXN')">+ Carrito</button></div></div>
+      <div class="ind-card glass reveal delay-2" onclick="openSvc('ca')"><div class="ind-info"><h4>Chatbot Avanzado</h4><p>Flujos personalizados · Lógica multi-etapa</p></div><div class="ind-right"><div class="ind-price">$10,000</div><button class="ind-add-btn" id="btn-ca" onclick="event.stopPropagation();addToCart('ca','Chatbot Avanzado','$10,000 MXN')">+ Carrito</button></div></div>
+      <div class="ind-card glass reveal delay-3" onclick="openSvc('auto')"><div class="ind-info"><h4>Automatización de Procesos</h4><p>Make / Zapier · Conecta tus herramientas</p></div><div class="ind-right"><div class="ind-price">$8,000</div><button class="ind-add-btn" id="btn-auto" onclick="event.stopPropagation();addToCart('auto','Automatización de Procesos','$8,000 MXN')">+ Carrito</button></div></div>
+      <div class="ind-card glass reveal delay-1" onclick="openSvc('audit')"><div class="ind-info"><h4>Auditoría de Redes + Estrategia</h4><p>Diagnóstico completo + hoja de ruta</p></div><div class="ind-right"><div class="ind-price">$3,000</div><button class="ind-add-btn" id="btn-audit" onclick="event.stopPropagation();addToCart('audit','Auditoría de Redes + Estrategia','$3,000 MXN')">+ Carrito</button></div></div>
+      <div class="ind-card glass reveal delay-2" onclick="openSvc('pack')"><div class="ind-info"><h4>Pack 30 Contenidos Diseñados</h4><p>Sin gestión · Listos para publicar</p></div><div class="ind-right"><div class="ind-price">$2,000</div><button class="ind-add-btn" id="btn-pack" onclick="event.stopPropagation();addToCart('pack','Pack 30 Contenidos Diseñados','$2,000 MXN')">+ Carrito</button></div></div>
+      <div class="ind-card glass reveal delay-3" onclick="openSvc('foto')"><div class="ind-info"><h4>Sesión Foto & Video Profesional</h4><p>2 horas en tu local · Fotos y videos ilimitados</p></div><div class="ind-right"><div class="ind-price">$3,000</div><button class="ind-add-btn" id="btn-foto" onclick="event.stopPropagation();addToCart('foto','Sesión Foto & Video Profesional','$3,000 MXN')">+ Carrito</button></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARATIVA PLAN GROWTH CON PRECIO ACTUALIZADO -->
+<div class="sec-full" id="comparativa">
+  <div class="sec-inner">
+    <div class="reveal"><div class="label">Plan Growth vs Alternativas</div></div>
+    <div class="reveal delay-1"><h2 class="title">Por qué el plan <em>GROWTH</em><br>es tu mejor inversión</h2></div>
+    <div class="reveal delay-2"><p class="sub">Comparativa directa con otras opciones del mercado. Todo lo que necesitas para crecer, en un solo plan.</p></div>
+    <div class="comparativa-wrapper reveal delay-3">
+      <table class="comparativa-table glass">
+        <thead><tr><th>Característica</th><th>NEXUZ GROWTH</th><th>Otras Agencias</th><th>Hazlo tú mismo</th></tr></thead>
+        <tbody>
+          <tr class="nexuz-highlight"><td class="feature-td">Chatbots IA 24/7</td><td class="check"> Incluido</td><td class="cross"> Extra</td><td class="cross"></td></tr>
+          <tr><td class="feature-td">Publicaciones mensuales</td><td>20 + stories</td><td>12-15</td><td>Ilimitado (requiere tiempo)</td></tr>
+          <tr class="nexuz-highlight"><td class="feature-td">Reels profesionales</td><td class="check">2 por mes</td><td class="cross"> Extra</td><td class="cross"></td></tr>
+          <tr><td class="feature-td">Redes sociales gestionadas</td><td>2 redes</td><td>1 red</td><td>Ilimitado</td></tr>
+          <tr class="nexuz-highlight"><td class="feature-td">Sesión de foto/video</td><td class="check"> Incluida</td><td class="cross"> Extra</td><td class="cross"></td></tr>
+          <tr><td class="feature-td">Reportes en tiempo real</td><td class="check"> Dashboard</td><td class="cross"> PDF mensual</td><td class="cross"></td></tr>
+          <tr class="nexuz-highlight"><td class="feature-td">Estrategia mensual</td><td class="check"> Incluida</td><td class="check"> Incluida</td><td class="cross"></td></tr>
+          <tr><td class="feature-td">Soporte prioritario</td><td class="check"> WhatsApp 24/7</td><td>Correo 24-48h</td><td class="cross"></td></tr>
+          <tr class="nexuz-highlight"><td class="feature-td">Inversión mensual</td><td class="price-highlight">$16,000 MXN</td><td class="price-highlight">$20,000+ MXN</td><td>~$8,000 (tiempo + herramientas)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal delay-4" style="text-align:center; margin-top:2rem;">
+      <p class="sub" style="max-width:100%;">El plan GROWTH incluye todo lo que necesitas para escalar: contenido, automatización, estrategia y soporte. <strong>La mejor relación calidad-precio del mercado.</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- PORTAFOLIO / CARRUSEL -->
+<div id="portafolio">
+  <div class="car-inner">
+    <div class="car-header reveal">
+      <div class="label" style="justify-content:center">Lo que hacemos por ti</div>
+      <h2 class="title" style="text-align:center">Capacidades que<br><em>transforman tu negocio.</em></h2>
+      <p class="sub" style="margin:0 auto;text-align:center;max-width:580px;">Esto es lo que NEXUZ puede hacer por tu negocio. Cada solución está diseñada para generar resultados reales desde el primer mes.</p>
+    </div>
+
+    <div class="car-viewport reveal delay-2">
+      <div class="car-track" id="carTrack">
+        <div class="car-slide"><div class="car-card glass" onclick="openPortfolioItem(0)">
+          <div class="car-media" style="background:#f4f4ff;"><img src="atencion-247.png" alt="Atención 24/7" style="object-fit:contain;padding:1rem;background:#f4f4ff;"><div class="car-overlay-grad"></div></div>
+          <div class="car-info"><span class="car-tag">Chatbots</span><h4>Atención 24/7</h4><p>Tu negocio responde siempre, aunque no estés disponible.</p></div>
+        </div></div>
+        <div class="car-slide"><div class="car-card glass" onclick="openPortfolioItem(1)">
+          <div class="car-media" style="background:#f4f4ff;"><img src="procesos-sin-friccion.png" alt="Procesos sin fricción" style="object-fit:contain;padding:1rem;background:#f4f4ff;"><div class="car-overlay-grad"></div></div>
+          <div class="car-info"><span class="car-tag">Automatización</span><h4>Procesos sin fricción</h4><p>Flujos de trabajo conectados con IA que corren solos.</p></div>
+        </div></div>
+        <div class="car-slide"><div class="car-card glass" onclick="openPortfolioItem(2)">
+          <div class="car-media" style="background:#f4f4ff;"><img src="identidad-visual.png" alt="Identidad visual" style="object-fit:contain;padding:1rem;background:#f4f4ff;"><div class="car-overlay-grad"></div></div>
+          <div class="car-info"><span class="car-tag">Branding</span><h4>Identidad visual</h4><p>Diseño coherente y profesional en cada punto de contacto.</p></div>
+        </div></div>
+        <div class="car-slide"><div class="car-card glass" onclick="openPortfolioItem(3)">
+          <div class="car-media" style="background:#f4f4ff;"><img src="contenido-estrategico.png" alt="Contenido estratégico" style="object-fit:contain;padding:1rem;background:#f4f4ff;"><div class="car-overlay-grad"></div></div>
+          <div class="car-info"><span class="car-tag">Redes Sociales</span><h4>Contenido estratégico</h4><p>Publicaciones con estrategia, identidad y copy que convierte.</p></div>
+        </div></div>
+        <div class="car-slide"><div class="car-card glass" onclick="openPortfolioItem(4)">
+          <div class="car-media" style="background:#f4f4ff;"><img src="contenido-dinamico.png" alt="Contenido dinámico" style="object-fit:contain;padding:1rem;background:#f4f4ff;"><div class="car-overlay-grad"></div></div>
+          <div class="car-info"><span class="car-tag">Reels & Video</span><h4>Contenido dinámico</h4><p>Videos pensados para retener, posicionar y convertir.</p></div>
+        </div></div>
+        <div class="car-slide"><div class="car-card glass" onclick="openPortfolioItem(5)">
+          <div class="car-media" style="background:#f4f4ff;"><img src="reportes-datos.png" alt="Reportes y datos" style="object-fit:contain;padding:1rem;background:#f4f4ff;"><div class="car-overlay-grad"></div></div>
+          <div class="car-info"><span class="car-tag">Estrategia</span><h4>Reportes y datos</h4><p>Métricas claras para decisiones inteligentes cada mes.</p></div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="car-nav reveal delay-3">
+      <div class="car-arrow" onclick="carMove(-1)"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></div>
+      <div class="car-dots" id="carDots"></div>
+      <div class="car-arrow" onclick="carMove(1)"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- PREGUNTAS FRECUENTES FAQ -->
+<div class="sec" id="faq">
+  <div class="reveal"><div class="label">Preguntas Frecuentes</div></div>
+  <div class="reveal delay-1"><h2 class="title">Resolvemos tus <em>dudas</em></h2></div>
+  <div class="reveal delay-2"><p class="sub">Todo lo que necesitas saber antes de comenzar con NEXUZ.</p></div>
+  <div class="faq-grid reveal delay-3">
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">¿Necesito firmar contrato de larga permanencia? <span class="icon"></span></div>
+      <div class="faq-answer"><p>No. Todos nuestros planes son mes a mes. Puedes cancelar cuando quieras sin penalización.</p></div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">¿Qué incluye la implementación inicial? <span class="icon"></span></div>
+      <div class="faq-answer"><p>Configuración de chatbots, onboarding de redes, definición de estrategia y activación de automatizaciones.</p></div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">¿Puedo combinar servicios adicionales con mi plan? <span class="icon"></span></div>
+      <div class="faq-answer"><p>Sí, todos los adicionales son compatibles. Puedes contratarlos cuando los necesites.</p></div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">¿Qué tipo de soporte recibo durante el mes? <span class="icon"></span></div>
+      <div class="faq-answer"><p>Soporte prioritario por WhatsApp, reunión mensual de estrategia y reportes detallados.</p></div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">¿Cuánto tiempo tardo en ver resultados? <span class="icon"></span></div>
+      <div class="faq-answer"><p>Resultados significativos en las primeras 4-6 semanas. El chatbot capta leads desde el día 1.</p></div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">¿Necesito conocimientos técnicos? <span class="icon"></span></div>
+      <div class="faq-answer"><p>No. Nosotros manejamos toda la parte técnica. Tú solo te enfocas en tu negocio.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<div class="sec-full" id="contacto">
+  <div class="sec-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="reveal"><div class="label">Contacto</div></div>
+        <div class="reveal delay-1"><h2 class="title">¿Listo para<br><em>dar el salto?</em></h2></div>
+        <div class="reveal delay-2"><p class="sub">Cuéntanos sobre tu negocio y te respondemos en menos de 24 horas con una propuesta personalizada.</p></div>
+        <div class="c-info reveal delay-3">
+          <div class="c-item"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="c-text"><h4>Email</h4><a href="mailto:Nexuz@nexuzmexico.com">Nexuz@nexuzmexico.com</a></div></div>
+          <div class="c-item"><div class="c-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div><div class="c-text"><h4>Instagram</h4><a href="https://www.instagram.com/_nexuzmx/" target="_blank">@_nexuzmx</a></div></div>
+          <div class="c-item"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="c-text"><h4>Facebook</h4><a href="https://www.facebook.com/profile.php?id=61590419578405" target="_blank">NEXUZ México</a></div></div>
+        </div>
+      </div>
+      <form class="c-form reveal delay-2" id="contactForm" action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST">
+        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+        <div class="fg"><label>Nombre completo</label><input type="text" name="nombre" placeholder="Tu nombre" required maxlength="80" autocomplete="name"></div>
+        <div class="fg"><label>Correo electrónico</label><input type="email" name="email" placeholder="tu@email.com" required maxlength="120" autocomplete="email"></div>
+        <div class="fg"><label>Empresa / Negocio</label><input type="text" name="empresa" placeholder="¿Cómo se llama tu negocio?" maxlength="100"></div>
+        <div class="fg"><label>¿Qué te interesa?</label><select name="interes"><option>Plan Starter</option><option>Plan Growth</option><option>Plan Scale</option><option>Servicio adicional</option><option>Solo quiero información</option></select></div>
+        <div class="fg"><label>Mensaje</label><textarea name="mensaje" placeholder="Cuéntanos sobre tu negocio y lo que buscas lograr..." maxlength="1000"></textarea></div>
+        <button type="submit" class="c-submit">Enviar mensaje →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- EQUIPO -->
+<div class="sec" id="equipo">
+  <div class="sec-inner" style="max-width:820px">
+    <div class="reveal" style="text-align:center"><div class="label" style="justify-content:center">Únete al equipo</div></div>
+    <div class="reveal delay-1" style="text-align:center"><h2 class="title">¿Quieres ser parte<br><em>de NEXUZ?</em></h2></div>
+    <div class="reveal delay-2" style="text-align:center"><p class="sub" style="max-width:100%;margin:0 auto 0">Siempre buscamos talento que comparta nuestra visión: hacer que la tecnología trabaje para las personas.</p></div>
+    <form class="work-form reveal delay-3" action="https://formspree.io/f/TU_ID_FORMSPREE_EQUIPO" method="POST">
+      <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+      <div class="fg"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre completo" required maxlength="80" autocomplete="name"></div>
+      <div class="fg"><label>Correo</label><input type="email" name="email" placeholder="tu@email.com" required maxlength="120" autocomplete="email"></div>
+      <div class="fg fw"><label>¿En qué área puedes aportar?</label><select name="area"><option>Diseño gráfico</option><option>Community Manager / Redes</option><option>Fotografía / Videografía</option><option>Desarrollo / Automatizaciones</option><option>Ventas</option><option>Otro</option></select></div>
+      <div class="fg fw"><label>¿Por qué NEXUZ?</label><textarea name="mensaje" placeholder="Cuéntanos qué te motiva a unirte al equipo..." maxlength="1000"></textarea></div>
+      <div class="fw"><button type="submit" class="c-submit">Enviar solicitud →</button></div>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <canvas id="footLogoCanvas" class="foot-logo-img" title="NEXUZ"></canvas>
+    <div class="foot-copy">© 2026 NEXUZ · Move smarter, grow faster.</div>
+    <div class="socials">
+      <a class="soc" href="https://www.instagram.com/_nexuzmx/" target="_blank"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a class="soc" href="https://www.facebook.com/profile.php?id=61590419578405" target="_blank"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></a>
+      <a class="soc" href="mailto:Nexuz@nexuzmexico.com"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer"><div class="cart-head"><h2>TU CARRITO</h2><button class="cart-close" onclick="closeCart()">×</button></div><div class="cart-body" id="cartBody"><div class="cart-empty"><div class="cart-empty-icon"></div><div>Tu carrito está vacío.<br>Agrega planes o servicios para comenzar.</div></div></div><div class="cart-foot"><div class="cart-subtotal"><span>Total estimado</span><div class="cart-total-val" id="cartTotal">$0</div></div><div class="cart-note">* Los precios de plan incluyen mensualidad. La implementación se cotiza aparte. Precios en MXN.</div><button class="cart-checkout" onclick="checkout()">Solicitar cotización →</button><button class="cart-clear" onclick="clearCart()">Vaciar carrito</button></div></div>
+
+<div class="overlay" id="ov" onclick="closeOv(event)"><div class="modal" id="mc"></div></div>
+<div class="toast" id="toast"></div>
+
+<!-- NEXO — ASISTENTE VIRTUAL NEXUZ -->
+<button class="nexo-launcher" id="nexoLauncher" onclick="toggleNexo()" title="Habla con Nexo">
+  <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  <div class="nexo-dot"></div>
+</button>
+
+<div class="nexo-window" id="nexoWindow">
+  <div class="nexo-head">
+    <div class="nexo-avatar">
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <div class="nexo-online"></div>
+    </div>
+    <div class="nexo-head-info">
+      <h4>NEXO</h4>
+      <span> Asistente de NEXUZ</span>
+    </div>
+    <button class="nexo-close" onclick="toggleNexo()">×</button>
+  </div>
+  <div class="nexo-body" id="nexoBody"></div>
+  <div class="nexo-input-area">
+    <textarea class="nexo-input" id="nexoInput" placeholder="Escribe tu pregunta..." rows="1" maxlength="300" onkeydown="nexoHandleKey(event)" oninput="nexoAutoResize(this)"></textarea>
+    <button class="nexo-send" onclick="nexoSend()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+    </button>
+  </div>
+</div>
+
+
+<script>
+/* ============ PROGRESS BAR ============ */
+window.addEventListener('scroll', () => { const winScroll = document.documentElement.scrollTop; const height = document.documentElement.scrollHeight - window.innerHeight; const scrolled = (winScroll / height) * 100; document.getElementById('progressBar').style.width = scrolled + '%'; });
+
+/* ============ GLOBAL PARTICLE CANVAS ============ */
+(function(){
+  const canvas = document.getElementById('globalCanvas'); const ctx = canvas.getContext('2d'); let W, H; const TOTAL = 120; const DIST = 130; let mouse = {x:-9999,y:-9999}; let particles = [];
+  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = document.documentElement.scrollHeight; canvas.style.height = H+'px'; }
+  class P{ constructor(){ this.x = Math.random()*W; this.y = Math.random()*H; this.vx = (Math.random()-.5)*.45; this.vy = (Math.random()-.5)*.45; this.r = Math.random()*1.6+.4; this.a = Math.random()*.4+.15; }
+  step(){ const dx = mouse.x - this.x; const dy = mouse.y + window.scrollY - this.y; const dist = Math.hypot(dx,dy); if(dist < 160){ const f = (160-dist)/160*.025; this.vx += dx*f*.06; this.vy += dy*f*.06; } this.vx *= .988; this.vy *= .988; this.x += this.vx; this.y += this.vy; if(this.x < -10) this.x = W+10; if(this.x > W+10) this.x = -10; if(this.y < -10) this.y = H+10; if(this.y > H+10) this.y = -10; }
+  draw(){ const screenY = this.y - window.scrollY; const viewH = window.innerHeight; let opacityMultiplier = 1; if (screenY > viewH) { opacityMultiplier = Math.max(0.35, 1 - (screenY - viewH) / (viewH * 2)); } ctx.beginPath(); ctx.arc(this.x,this.y,this.r,0,Math.PI*2); ctx.fillStyle=`rgba(43,43,255,${this.a * opacityMultiplier})`; ctx.fill(); } }
+  function init(){ resize(); particles=[]; for(let i=0;i<TOTAL;i++) particles.push(new P()); }
+  function frame(){ ctx.clearRect(0,0,W,H); particles.forEach(p=>{p.step();p.draw();}); const viewH = window.innerHeight; for(let i=0;i<particles.length;i++){ for(let j=i+1;j<particles.length;j++){ const dx=particles[i].x-particles[j].x; const dy=particles[i].y-particles[j].y; const d =Math.hypot(dx,dy); if(d<DIST){ const screenYi = particles[i].y - window.scrollY; const screenYj = particles[j].y - window.scrollY; const avgScreenY = (screenYi + screenYj) / 2; let connMultiplier = 1; if (avgScreenY > viewH) { connMultiplier = Math.max(0.3, 1 - (avgScreenY - viewH) / (viewH * 2)); } const a=(1-d/DIST)*.14*connMultiplier; ctx.beginPath(); ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.strokeStyle=`rgba(43,43,255,${a})`; ctx.lineWidth=.5; ctx.stroke(); } } } requestAnimationFrame(frame); }
+  window.addEventListener('resize',()=>{clearTimeout(window._rto);window._rto=setTimeout(init,200);});
+  document.addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY;});
+  document.addEventListener('mouseleave',()=>{mouse.x=-9999;mouse.y=-9999;});
+  window.addEventListener('scroll',()=>{const sh=document.documentElement.scrollHeight;if(sh!==H){init();}});
+  init(); frame();
+})();
+
+/* ============ SCROLL REVEAL ============ */
+const observer = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('active'); observer.unobserve(e.target); } }); }, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ============ NAV ============ */
+window.addEventListener('scroll', () => { document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60); });
+function scroll2(id){ document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
+
+/* ============ DATA ============ */
+let D = {
+  starter:{nm:'STARTER',tg:'Tu primer paso hacia una presencia digital que trabaja para ti.',desc:'Ideal para negocios que están arrancando su presencia digital.',act:'$15,000 MXN',mo:'$13,000 MXN/mes',price:'13000',features:['12 publicaciones al mes','Diseño con identidad','Copies con IA','1 red social','Reporte mensual'],note:'La tarifa de implementación cubre la configuración inicial.'},
+  growth:{nm:'GROWTH',tg:'Para negocios que quieren convertir seguidores en clientes.',desc:'Con contenido, automatización y estrategia real.',act:'$18,000 MXN',mo:'$16,000 MXN/mes',price:'16000',features:['20 publicaciones + stories','2 reels al mes','2 redes sociales','Chatbot básico','Sesión mensual de fotos'],note:'Incluye análisis estratégico inicial.'},
+  scale:{nm:'SCALE',tg:'Para quienes juegan en serio y quieren dominar su mercado.',desc:'Automatiza, domina y escala tu negocio.',act:'$0 MXN (Sin tarifa)',mo:'$20,000 MXN/mes',price:'20000',features:['Todo Growth','3 redes + 4 reels','Chatbot avanzado','1 automatización','Sesión 2hrs ilimitada'],note:'Sin costo de implementación.'}
+};
+const S={
+  cb:{nm:'Chatbot Básico',desc:'Instala un chatbot funcional en WhatsApp o Instagram.',price:'$6,000 MXN',inc:['Instalación completa','Flujos básicos','Integración WhatsApp/Instagram','7 días de soporte']},
+  ca:{nm:'Chatbot Avanzado',desc:'Chatbot con flujos personalizados.',price:'$10,000 MXN',inc:['Flujos avanzados','Integración CRM','Seguimiento de leads','15 días de soporte']},
+  auto:{nm:'Automatización de Procesos',desc:'Conecta tus herramientas con Make/Zapier.',price:'$8,000 MXN',inc:['Análisis del proceso','Configuración','Conexión entre herramientas','10 días de soporte']},
+  audit:{nm:'Auditoría de Redes + Estrategia',desc:'Diagnóstico completo + hoja de ruta.',price:'$3,000 MXN',inc:['Análisis de competidores','Optimización de perfil','Guía de contenido','Videollamada 45 min']},
+  pack:{nm:'Pack 30 Contenidos Diseñados',desc:'30 piezas listas para publicar.',price:'$2,000 MXN',inc:['30 diseños','Temáticas del nicho','Formato Feed/Stories','Entrega en la nube']},
+  foto:{nm:'Sesión Foto & Video Profesional',desc:'2 horas en tu local.',price:'$3,000 MXN',inc:['2 horas de sesión','Fotos ilimitadas','Video para Reels/TikTok','Entrega < 5 días']}
+};
+
+/* ============ CART ============ */
+let cart=[];
+function parseMXN(s){const n=parseInt(s.replace(/[^0-9]/g,''));return isNaN(n)?0:n;}
+function addToCart(id,name,price,consult=false){ if(cart.find(i=>i.id===id)){showToast('Ya está en tu carrito.');return;} cart.push({id,name,price,consult}); updateCart(); showToast('"'+name+'" agregado al carrito.'); const btn=document.getElementById('btn-'+id); if(btn){btn.textContent=' Agregado';btn.classList.add('added');} }
+function removeFromCart(id){ cart=cart.filter(i=>i.id!==id); updateCart(); const btn=document.getElementById('btn-'+id); if(btn){btn.textContent='+ Carrito';btn.classList.remove('added');} }
+function clearCart(){ cart=[]; updateCart(); document.querySelectorAll('.ind-add-btn').forEach(b=>{b.textContent='+ Carrito';b.classList.remove('added');}); }
+function updateCart(){ const badge=document.getElementById('cartBadge'); badge.textContent=cart.length; badge.classList.toggle('show',cart.length>0); const body=document.getElementById('cartBody'); const total=document.getElementById('cartTotal'); if(!cart.length){ body.innerHTML='<div class="cart-empty"><div class="cart-empty-icon"></div><div>Tu carrito está vacío.</div></div>'; total.textContent='$0'; return; } let sum=0,hasConsult=false,html=''; cart.forEach(item=>{ const n=parseMXN(item.price); if(item.consult)hasConsult=true; else sum+=n; html+='<div class="cart-item"><div class="cart-item-info"><div class="cart-item-name">'+item.name+'</div><div class="cart-item-type">'+(item.consult?'A cotizar':'Mensualidad')+'</div></div><div class="cart-item-price">'+(item.consult?'Consultar':item.price)+'</div><button class="cart-remove" onclick="removeFromCart(\''+item.id+'\')">×</button></div>'; }); body.innerHTML=html; total.textContent=sum>0?'$'+sum.toLocaleString('es-MX')+' MXN'+(hasConsult?' + Consultar':''):'A cotizar'; }
+function openCart(){ document.getElementById('cartOverlay').classList.add('on'); document.getElementById('cartDrawer').classList.add('on'); document.body.style.overflow='hidden'; }
+function closeCart(){ document.getElementById('cartOverlay').classList.remove('on'); document.getElementById('cartDrawer').classList.remove('on'); document.body.style.overflow=''; }
+function checkout(){ if(!cart.length){showToast('Tu carrito está vacío.');return;} const total = cart.reduce((s,i)=>s+parseMXN(i.price),0); const msg = cart.map(i=>'• '+i.name+' - '+(i.consult?'Consultar':i.price)).join('\n'); const wa = 'https://wa.me/529983114978?text='+encodeURIComponent('Hola NEXUZ, quiero cotizar:\n\n'+msg+'\n\nTotal: $'+total.toLocaleString('es-MX')+' MXN'); closeCart(); window.open(wa,'_blank'); }
+
+/* ============ RECOMENDADOR DE PLAN ============ */
+const recData = { tipo:'', objetivo:'', redes:[], prioridad:'', presupuesto:'' };
+const recTotalSteps = 5;
+
+function recUpdateBar(step){ document.getElementById('recBar').style.width = ((step-1)/recTotalSteps*100)+'%'; }
+
+function recSelect(el, key, val){
+  el.closest('.rec-options').querySelectorAll('.rec-opt').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+  recData[key] = val;
+  const stepNum = parseInt(el.closest('.rec-step').id.replace('recStep',''));
+  document.getElementById('recNext'+stepNum).disabled = false;
+}
+
+function recToggle(el, key, val){
+  if(val === 'ninguna'){
+    el.closest('.rec-options').querySelectorAll('.rec-opt').forEach(o=>o.classList.remove('selected'));
+    recData[key] = ['ninguna'];
+    el.classList.add('selected');
+  } else {
+    const ninEl = Array.from(el.closest('.rec-options').querySelectorAll('.rec-opt')).find(o=>o.getAttribute('onclick') && o.getAttribute('onclick').includes('ninguna'));
+    if(ninEl) ninEl.classList.remove('selected');
+    el.classList.toggle('selected');
+    recData[key] = recData[key].filter(v=>v!=='ninguna');
+    if(el.classList.contains('selected')){ if(!recData[key].includes(val)) recData[key].push(val); }
+    else { recData[key] = recData[key].filter(v=>v!==val); }
+  }
+  document.getElementById('recNext3').disabled = recData[key].length === 0;
+}
+
+function recBudget(el, val){
+  el.closest('.rec-budget-row').querySelectorAll('.rec-budget-btn').forEach(b=>b.classList.remove('selected'));
+  el.classList.add('selected');
+  recData.presupuesto = val;
+  document.getElementById('recNext5').disabled = false;
+}
+
+function recGoTo(step){
+  document.querySelectorAll('.rec-step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('recResultado').classList.remove('active');
+  document.getElementById('recStep'+step).classList.add('active');
+  recUpdateBar(step);
+}
+
+function recCalcular(){
+  recUpdateBar(6);
+  document.querySelectorAll('.rec-step').forEach(s=>s.classList.remove('active'));
+  const r = recData;
+  let plan='', precio='', precioNota='', why='', extras=[], items=[];
+  const presup = r.presupuesto, prio = r.prioridad, obj = r.objetivo;
+
+  if(presup==='menos10'){
+    plan='PAQUETE PERSONALIZADO';
+    let totalBase=0;
+    if(prio==='chatbot'||obj==='atencion'){
+      items=['Chatbot Básico (WhatsApp o Instagram) — $6,000 MXN','Auditoría de Redes + Estrategia — $3,000 MXN'];
+      totalBase=9000;
+      why='Tu prioridad es la atención al cliente y tu presupuesto es ajustado. Un chatbot básico cubre ese frente desde el día 1 sin compromisos mensuales, y la auditoría te da una hoja de ruta clara para crecer de forma ordenada.';
+    } else if(prio==='foto'){
+      items=['Sesión Foto & Video Profesional — $3,000 MXN','Pack 30 Contenidos Diseñados — $2,000 MXN'];
+      totalBase=5000;
+      why='Material visual profesional es el primer paso para diferenciarte. Con sesión de foto/video más un pack de contenidos diseñados, tienes todo el material para arrancar con fuerza.';
+    } else {
+      items=['Auditoría de Redes + Estrategia — $3,000 MXN','Pack 30 Contenidos Diseñados — $2,000 MXN'];
+      totalBase=5000;
+      why='Con tu presupuesto actual, lo más inteligente es hacer un diagnóstico completo de tu situación digital y armarte de contenido listo para publicar. Esto te prepara para dar el siguiente paso cuando tu presupuesto crezca.';
+    }
+    precio='$'+(totalBase+1200).toLocaleString('es-MX')+' MXN';
+    precioNota='Incluye $1,200 MXN de implementación · Precio con IVA incluido';
+    extras=['Cuando tu presupuesto crezca, el Plan STARTER ($13,000 MXN/mes) es el siguiente paso natural','Considera agregar un Chatbot Básico para no perder leads mientras creces','La auditoría te da claridad sobre dónde invertir primero'];
+
+  } else if(presup==='10-15'){
+    plan='PLAN STARTER'; precio='$13,000 MXN/mes';
+    precioNota='Primer mes $15,000 MXN (incluye implementación única) · IVA incluido';
+    items=['12 publicaciones al mes','Diseño con identidad de marca','Copies redactados con IA','1 red social gestionada','Reporte mensual de resultados'];
+    if(prio==='chatbot'||obj==='atencion'){
+      why='El Plan Starter cubre tu presupuesto y te da presencia digital consistente. Ya que priorizas la atención al cliente, te recomendamos agregar un Chatbot Básico para que ningún lead quede sin respuesta.';
+      extras=['+ Chatbot Básico ($6,000 pago único) para atención 24/7','Cuando crezcas, el Plan GROWTH incluye chatbot básico sin costo extra','Una auditoría inicial te ayuda a enfocar el contenido en lo que realmente convierte'];
+    } else {
+      why='El Plan Starter es la solución perfecta para tu presupuesto y objetivos actuales. Con 12 publicaciones mensuales profesionales y estrategia real, empiezas a construir presencia digital sólida desde el primer mes.';
+      extras=['Agrega una Sesión Foto & Video ($3,000) para tener material visual propio','Cuando quieras escalar, el Plan GROWTH añade más redes y chatbot incluido','Una auditoría de redes ($3,000) complementa el plan con estrategia más profunda'];
+    }
+
+  } else if(presup==='15-18'){
+    if(prio==='chatbot'||prio==='combinado'||obj==='todo'||obj==='atencion'){
+      plan='PLAN GROWTH'; precio='$16,000 MXN/mes';
+      precioNota='Primer mes $18,000 MXN (incluye implementación única) · IVA incluido';
+      items=['20 publicaciones + stories al mes','2 reels mensuales','2 redes sociales','Chatbot básico incluido','Sesión mensual de fotos','Reporte detallado + junta de estrategia'];
+      why='El Plan Growth es exactamente lo que necesitas. Incluye todo lo del Starter más chatbot básico, una red extra, reels y sesión de fotos. La relación precio-valor es la mejor de todos nuestros planes.';
+      extras=['Agrega Automatización de Procesos ($8,000) para escalar sin contratar más personal','El chatbot incluido puede potenciarse con flujos avanzados por $10,000','Considera Sesión de Foto & Video extra para más material'];
+    } else {
+      plan='PLAN STARTER + EXTRAS'; precio='Desde $16,000 MXN';
+      precioNota='Plan Starter ($13,000/mes) + servicio adicional · IVA incluido';
+      items=['Todo lo del Plan Starter','+ Servicio adicional según tu prioridad','Máxima flexibilidad para combinar lo que necesitas'];
+      why='Con tu presupuesto puedes arrancar con el Plan Starter y sumarle exactamente el servicio que priorizas, sin pagar por cosas que no necesitas todavía.';
+      extras=['+ Chatbot Básico ($6,000) si quieres atención automatizada','+ Auditoría de Redes ($3,000) para refinar tu estrategia','+ Pack 30 Contenidos ($2,000) como respaldo adicional'];
+    }
+
+  } else if(presup==='18-22'){
+    plan='PLAN GROWTH'; precio='$16,000 MXN/mes';
+    precioNota='Primer mes $18,000 MXN · IVA incluido · Te queda presupuesto para un extra';
+    items=['20 publicaciones + stories al mes','2 reels mensuales','2 redes sociales gestionadas','Chatbot básico incluido','Sesión mensual de fotos','Reporte detallado + junta mensual de estrategia'];
+    why='El Plan Growth cubre perfectamente tu rango de presupuesto y con lo que te sobra puedes agregar un servicio adicional para potenciar resultados. Es el plan que más clientes eligen por su equilibrio entre precio y valor.';
+    if(prio==='automatizacion'||obj==='automatizar'){
+      extras=['+ Automatización de Procesos ($8,000 pago único) — ideal para tu perfil','Cuando crezcas al Plan Scale, la automatización viene incluida','Considera el Chatbot Avanzado para leads más calificados'];
+    } else {
+      extras=['Con el presupuesto restante puedes agregar Sesión Foto & Video ($3,000)','Una Auditoría de Redes complementa la estrategia del plan','El Plan Scale es el siguiente paso para dominar 3 redes'];
+    }
+
+  } else {
+    plan='PLAN SCALE'; precio='$20,000 MXN/mes';
+    precioNota='Sin cuota de implementación · IVA incluido';
+    items=['Todo lo del Plan Growth','3 redes sociales gestionadas','4 reels mensuales','Chatbot avanzado personalizado','1 automatización activa','Fotografía profesional mensual (2 horas ilimitadas)','Estrategia trimestral + soporte prioritario WhatsApp'];
+    why='Con tu presupuesto tienes acceso al plan más completo de NEXUZ. El Plan Scale es para negocios que quieren dominar su mercado: automatizaciones, chatbot avanzado, fotografía profesional y estrategia profunda sin costo de implementación.';
+    extras=['Agrega Chatbot Avanzado con flujos extra si necesitas lógica más compleja','La automatización incluida puede conectarse con tu CRM o sistema de ventas','Considera múltiples sesiones foto/video para siempre tener material fresco'];
+  }
+
+  const planColor = plan.includes('SCALE')?'#00d4ff':plan.includes('GROWTH')?'#6060ff':'#2B2BFF';
+  const perfilMap = {
+    tipo:{local:'Negocio local',emprendedor:'Emprendedor',freelancer:'Freelancer / Consultor',empresa:'Empresa mediana',ecommerce:'E-commerce',otro:'Negocio'},
+    objetivo:{clientes:'conseguir más clientes',presencia:'mejorar presencia digital',automatizar:'automatizar procesos',atencion:'atender mejor a clientes',todo:'crecer en todos los frentes'},
+    prioridad:{contenido:'contenido y redes',chatbot:'atención 24/7 con chatbot',automatizacion:'automatizaciones',foto:'fotografía y video',estrategia:'estrategia y reportes',combinado:'solución completa'}
+  };
+  const extrasHTML = extras.map(e=>`<li>${e}</li>`).join('');
+  const itemsHTML = items.map(i=>`<li>${i}</li>`).join('');
+
+  document.getElementById('recResultado').innerHTML = `
+    <div class="rec-result-header">
+      <div class="rec-result-badge">Tu recomendación personalizada</div>
+      <div class="rec-result-title" style="background:linear-gradient(135deg,#fff,${planColor});-webkit-background-clip:text;background-clip:text;color:transparent;">${plan}</div>
+    </div>
+    <div class="rec-result-why"><strong style="color:#fff;display:block;margin-bottom:.4rem;">¿Por qué esta recomendación?</strong>${why}</div>
+    <div class="rec-result-cards">
+      <div class="rec-result-card"><h4>Tu perfil</h4><ul>
+        <li>${perfilMap.tipo[r.tipo]||'Tu negocio'}</li>
+        <li>Objetivo: ${perfilMap.objetivo[r.objetivo]||r.objetivo}</li>
+        <li>Prioridad: ${perfilMap.prioridad[r.prioridad]||r.prioridad}</li>
+        <li>Redes: ${(r.redes||[]).join(', ')||'por definir'}</li>
+      </ul></div>
+      <div class="rec-result-card"><h4>Incluye</h4><ul>${itemsHTML}</ul></div>
+    </div>
+    <div class="rec-price-box">
+      <div class="rec-price-label">Inversión recomendada</div>
+      <div class="rec-price-val">${precio}</div>
+      <div class="rec-price-note">${precioNota}</div>
+    </div>
+    <div class="rec-extras"><h4> Para potenciar tus resultados también considera</h4><ul>${extrasHTML}</ul></div>
+    <div class="rec-result-actions">
+      <button class="rec-cta-main" onclick="scroll2('contacto')">Quiero empezar con esto →</button>
+      <button class="rec-cta-restart" onclick="recReiniciar()">Volver a empezar</button>
+    </div>`;
+  document.getElementById('recResultado').classList.add('active');
+}
+
+function recReiniciar(){
+  recData.tipo=''; recData.objetivo=''; recData.redes=[]; recData.prioridad=''; recData.presupuesto='';
+  document.querySelectorAll('.rec-opt').forEach(o=>o.classList.remove('selected'));
+  document.querySelectorAll('.rec-budget-btn').forEach(b=>b.classList.remove('selected'));
+  document.querySelectorAll('.rec-next').forEach(b=>b.disabled=true);
+  document.getElementById('recResultado').classList.remove('active');
+  recGoTo(1);
+}
+
+/* ============ PORTFOLIO CAROUSEL ============ */
+let carIndex = 0;
+let carPerView = 3;
+const carTotalSlides = 6;
+
+function getCarPerView(){
+  if(window.innerWidth <= 560) return 1;
+  if(window.innerWidth <= 900) return 2;
+  return 3;
+}
+function carMaxIndex(){ return Math.max(0, carTotalSlides - carPerView); }
+function renderCarDots(){
+  const dotsWrap = document.getElementById('carDots');
+  if(!dotsWrap) return;
+  const pages = carMaxIndex() + 1;
+  dotsWrap.innerHTML = '';
+  for(let i=0;i<pages;i++){
+    const d = document.createElement('div');
+    d.className = 'car-dot' + (i===carIndex?' active':'');
+    d.onclick = () => { carIndex = i; updateCarousel(); };
+    dotsWrap.appendChild(d);
+  }
+}
+function updateCarousel(){
+  carPerView = getCarPerView();
+  carIndex = Math.min(carIndex, carMaxIndex());
+  const track = document.getElementById('carTrack');
+  if(!track) return;
+  const slideEl = track.querySelector('.car-slide');
+  if(!slideEl) return;
+  const slideWidth = slideEl.getBoundingClientRect().width;
+  const gap = 24; /* 1.5rem */
+  const offset = carIndex * (slideWidth + gap);
+  track.style.transform = `translateX(-${offset}px)`;
+  renderCarDots();
+}
+function carMove(dir){
+  carIndex = Math.max(0, Math.min(carMaxIndex(), carIndex + dir));
+  updateCarousel();
+}
+function openPortfolioItem(i){
+  showToast('Pronto verás ejemplos reales de este tipo de trabajo aquí.');
+}
+window.addEventListener('resize', () => { clearTimeout(window._carRto); window._carRto = setTimeout(updateCarousel, 150); });
+setTimeout(updateCarousel, 100);
+
+/* Autoplay sutil del carrusel */
+let carAutoplay = setInterval(() => {
+  if(carIndex >= carMaxIndex()){ carIndex = 0; } else { carIndex++; }
+  updateCarousel();
+}, 5000);
+document.getElementById('portafolio') && document.getElementById('portafolio').addEventListener('mouseenter', () => clearInterval(carAutoplay));
+
+/* ============ MODAL ============ */
+function openPlan(k){ const item=D[k]; const lf=item.features.map(f=>'<li><span class="ck"></span>'+f+'</li>').join(''); document.getElementById('mc').innerHTML='<button class="m-close" onclick="closeOv(event)">×</button><div class="m-label">PLAN MENSUAL</div><h3 class="m-title">'+item.nm+'</h3><div class="m-quote">"'+item.tg+'"</div><p class="m-desc">'+item.desc+'</p><div class="m-pricing"><div><div class="m-plabel">Implementación</div><div class="m-pvalue">'+item.act+'</div></div><div><div class="m-plabel">Mensualidad</div><div class="m-pvalue">'+item.mo+'</div></div></div><div class="m-ftitle">¿Qué incluye?</div><ul class="m-flist">'+lf+'</ul><div class="m-actions"><button class="m-cta" onclick="closeOv(event);scroll2(\'contacto\')">Quiero este plan →</button></div>'; document.getElementById('ov').classList.add('on'); document.body.style.overflow='hidden'; }
+function openSvc(k){ const item=S[k]; const lf=item.inc.map(i=>'<li><span class="ck"></span>'+i+'</li>').join(''); document.getElementById('mc').innerHTML='<button class="m-close" onclick="closeOv(event)">×</button><div class="m-label">SERVICIO</div><h3 class="m-title">'+item.nm+'</h3><p class="m-desc" style="margin-top:1rem">'+item.desc+'</p><div class="m-pricing"><div><div class="m-plabel">Inversión</div><div class="m-pvalue">'+item.price+'</div></div></div><div class="m-ftitle">Incluye</div><ul class="m-flist">'+lf+'</ul><div class="m-actions"><button class="m-cta" onclick="closeOv(event);scroll2(\'contacto\')">Contratar →</button></div>'; document.getElementById('ov').classList.add('on'); document.body.style.overflow='hidden'; }
+function closeOv(e){ if(e.target.id==='ov'||e.target.classList.contains('m-close')){ document.getElementById('ov').classList.remove('on'); document.body.style.overflow=''; } }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ document.getElementById('ov').classList.remove('on'); document.getElementById('cartOverlay').classList.remove('on'); document.getElementById('cartDrawer').classList.remove('on'); document.body.style.overflow=''; } });
+
+/* ============ TOAST ============ */
+let toastT;
+function showToast(msg){ const t=document.getElementById('toast'); t.innerHTML=msg; t.classList.add('on'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('on'),3800); }
+document.getElementById('contactForm').addEventListener('submit', function(e){ setTimeout(()=>{ showToast('Mensaje enviado. Te contactaremos pronto.'); this.reset(); },1500); });
+
+/* ============ NEXO — ASISTENTE VIRTUAL ============ */
+let nexoOpen = false;
+let nexoHistory = [];
+
+const NEXO_KB = [
+  /* SALUDOS */
+  { kws:['hola','buenas','buenos dias','buenas tardes','buenas noches','hey','que tal','hi','saludos'],
+    a:'¡Hola! 👋 Soy <strong>Nexo</strong>, el asistente virtual de NEXUZ. Estoy aquí para ayudarte a encontrar la solución digital perfecta para tu negocio. ¿Qué te gustaría saber?' },
+  /* PRECIOS */
+  { kws:['precio','precios','costo','costos','cuanto cuesta','cuanto vale','cuanto cobran','tarifa','tarifas','inversion','cuanto es','cuanto me saldria'],
+    a:'Tenemos planes mensuales y servicios individuales, todos con <strong>IVA incluido</strong>:<br><br>📦 <strong>STARTER</strong> — $13,000 MXN/mes · Primer mes $15,000<br>📦 <strong>GROWTH</strong> — $16,000 MXN/mes ⭐ El más popular · Primer mes $18,000<br>📦 <strong>SCALE</strong> — $20,000 MXN/mes · Sin cuota de implementación<br><br>También tenemos servicios individuales desde $2,000 MXN. ¿Quieres saber qué incluye cada plan o prefieres usar nuestro <strong>Recomendador</strong> para saber cuál es el tuyo?' },
+  /* STARTER */
+  { kws:['starter','plan basico','plan inicial','plan pequeño','primer plan'],
+    a:'El <strong>Plan STARTER</strong> es ideal para arrancar:<br><br>💰 $13,000 MXN/mes (primer mes $15,000 con implementación) · IVA incluido<br><br>✅ 12 publicaciones al mes<br>✅ Diseño con identidad de marca<br>✅ Copies redactados con IA<br>✅ 1 red social gestionada<br>✅ Reporte mensual<br><br>Perfecto si estás comenzando y quieres presencia digital consistente. ¿Te gustaría cotizarlo?' },
+  /* GROWTH */
+  { kws:['growth','plan growth','plan intermedio','plan mediano','plan popular','mas popular'],
+    a:'El <strong>Plan GROWTH</strong> es el más elegido y con mejor relación precio-valor:<br><br>💰 $16,000 MXN/mes (primer mes $18,000) · IVA incluido<br><br>✅ 20 publicaciones + stories al mes<br>✅ 2 reels mensuales<br>✅ 2 redes sociales<br>✅ Chatbot básico incluido<br>✅ Sesión mensual de fotos<br>✅ Reporte detallado + junta de estrategia<br><br>¿Te lo cotizamos?' },
+  /* SCALE */
+  { kws:['scale','plan scale','plan completo','plan premium','plan avanzado','plan mas completo','plan top'],
+    a:'El <strong>Plan SCALE</strong> es para quienes quieren dominar su mercado:<br><br>💰 $20,000 MXN/mes · Sin cuota de implementación · IVA incluido<br><br>✅ Todo lo del Plan Growth<br>✅ 3 redes sociales<br>✅ 4 reels mensuales<br>✅ Chatbot avanzado<br>✅ 1 automatización activa con IA<br>✅ Fotografía profesional mensual (2 horas)<br>✅ Estrategia trimestral + soporte WhatsApp<br><br>¿Hablamos?' },
+  /* COMPARAR */
+  { kws:['cual plan','que plan','cual es mejor','diferencia entre planes','comparar planes','que incluye cada plan','cual me recomiendas'],
+    a:'Usa nuestro <strong>Recomendador de Plan</strong> — 5 preguntas rápidas y te damos la recomendación exacta para tu negocio y presupuesto. Lo encuentras arriba de la sección de planes 👆<br><br>En resumen:<br>• Presupuesto ajustado → <strong>STARTER</strong><br>• Quieres crecer con chatbot → <strong>GROWTH</strong><br>• Quieres dominar con automatizaciones y foto → <strong>SCALE</strong>' },
+  /* SERVICIOS */
+  { kws:['servicio','servicios','que hacen','que ofrecen','en que ayudan','que pueden hacer','como pueden ayudarme'],
+    a:'En NEXUZ ofrecemos:<br><br>📱 <strong>Gestión de redes sociales</strong> — contenido estratégico con IA<br>🤖 <strong>Chatbots inteligentes</strong> — atención 24/7 en WhatsApp e Instagram<br>⚙️ <strong>Automatizaciones con IA</strong> — elimina tareas repetitivas<br>📷 <strong>Fotografía y video profesional</strong><br>📊 <strong>Auditorías y estrategia</strong> — datos claros para decisiones inteligentes<br><br>¿Por cuál te interesa saber más?' },
+  /* CHATBOT */
+  { kws:['chatbot','chat bot','bot','bot de whatsapp','bot de instagram','respuesta automatica','atencion automatica','atencion al cliente'],
+    a:'Nuestros chatbots responden <strong>24/7</strong> sin que estés pendiente:<br><br>✅ Flujos personalizados para tu negocio<br>✅ Captura automática de leads<br>✅ Agendamiento de citas<br>✅ Menú interactivo inteligente<br><br>💰 Chatbot Básico: $6,000 MXN · Chatbot Avanzado: $10,000 MXN · IVA incluido<br>También incluido en planes Growth y Scale. ¿Te interesa cotizar uno?' },
+  /* AUTOMATIZACIONES */
+  { kws:['automatizacion','automatizaciones','make','zapier','proceso','procesos','flujo','conectar sistemas','integracion','automatizar'],
+    a:'Conectamos tus herramientas para que trabajen solas:<br><br>✅ CRM + WhatsApp + correo + hojas de cálculo<br>✅ Seguimiento automático de clientes<br>✅ Reportes generados automáticamente<br>✅ Compatible con Make, Zapier, n8n<br><br>💰 $8,000 MXN servicio individual · Incluido en Plan SCALE · IVA incluido<br><br>¿Tienes un proceso específico que quieras automatizar?' },
+  /* FOTO */
+  { kws:['foto','fotos','sesion','fotografia','fotografía','video','fotografo','contenido visual','material visual'],
+    a:'Fotografía y video profesional para tu negocio:<br><br>📸 Sesión de 2 horas en tu local<br>✅ Fotos y videos ilimitados<br>✅ Material para Reels, TikTok e Instagram<br>✅ Entrega en menos de 5 días<br><br>💰 $3,000 MXN por sesión · Incluida en Plan SCALE · IVA incluido<br>⚠️ Agendar con mínimo <strong>15 días de anticipación</strong>. ¿Quieres reservar?' },
+  /* REDES */
+  { kws:['redes sociales','redes','instagram','facebook','tiktok','contenido','publicaciones','posts','stories','reels','community manager','manejo de redes'],
+    a:'Gestionamos tus redes con estrategia real:<br><br>✅ Calendarios editoriales mensuales<br>✅ Diseño con tu identidad de marca<br>✅ Copies persuasivos con IA<br>✅ Stories, reels y posts optimizados<br>✅ Reportes de métricas y resultados<br><br>Gestionamos 1, 2 o 3 redes según el plan. ¿Cuáles redes te interesan?' },
+  /* AUDITORÍA */
+  { kws:['auditoria','auditoría','diagnostico','diagnóstico','analisis de mis redes','revisar mis redes','que mejorar'],
+    a:'Nuestra <strong>Auditoría de Redes + Estrategia</strong>:<br><br>✅ Análisis completo de tu presencia actual<br>✅ Análisis de competidores<br>✅ Hoja de ruta con acciones prioritarias<br>✅ Videollamada de 45 minutos<br><br>💰 $3,000 MXN · IVA incluido · Ideal antes de invertir en un plan<br><br>¿Te interesa?' },
+  /* PACK CONTENIDOS */
+  { kws:['pack contenidos','pack de contenidos','contenidos diseñados','30 contenidos','diseños listos'],
+    a:'<strong>Pack de 30 Contenidos Diseñados</strong>:<br><br>✅ 30 piezas de diseño profesional<br>✅ Adaptadas a tu nicho<br>✅ Formato Feed y Stories<br>✅ Entrega en Google Drive<br><br>💰 $2,000 MXN · IVA incluido · Tú los publicas cuando quieras. ¿Te interesa?' },
+  /* NO PRESUPUESTO */
+  { kws:['muy caro','no puedo pagar','es mucho','no alcanzo','no tengo dinero','presupuesto bajo','presupuesto limitado','economico','barato','opcion mas barata','no tengo presupuesto'],
+    a:'¡No te preocupes! Tenemos opciones para todos los presupuestos. Si un plan mensual no encaja aún, puedes empezar con servicios individuales:<br><br>💡 Opción accesible para arrancar:<br>• Auditoría de Redes — $3,000 MXN<br>• Pack 30 Contenidos — $2,000 MXN<br>Total: $5,000 + $1,200 implementación = <strong>$6,200 MXN con IVA</strong><br><br>Cuando tu negocio escale, damos el salto a un plan mensual. ¿Qué opción te llama más?' },
+  /* DESCUENTO */
+  { kws:['descuento','descuentos','precio especial','negociar','oferta','promocion','promoción'],
+    a:'Lo que sí podemos hacer es armar un <strong>paquete personalizado</strong> exactamente a tu medida, sin que pagues por lo que no necesitas. Usa el <strong>Recomendador de Plan</strong> en esta página o cuéntame tu presupuesto y te armo una propuesta. ¿Cuánto tienes pensado invertir al mes?' },
+  /* GARANTÍA */
+  { kws:['garantia','garantía','no me gustan los resultados','que pasa si no funciona','resultados garantizados','que garantizan'],
+    a:'Lo que garantizamos:<br><br>✅ Contenido profesional entregado en tiempo<br>✅ Reportes mensuales transparentes<br>✅ Juntas de estrategia para ajustar el rumbo<br>✅ Comunicación directa en todo momento<br>✅ Sin contratos de permanencia — si no estás satisfecho, cancelas<br><br>¿Tienes una duda específica sobre resultados esperados?' },
+  /* TIEMPO RESULTADOS */
+  { kws:['cuando veo resultados','cuanto tarda','tiempo','resultados','cuanto tiempo','en cuanto tiempo','pronto'],
+    a:'Los tiempos varían por servicio:<br><br>⚡ Chatbot — capta leads desde el día 1<br>📱 Redes y contenido — resultados significativos en 4-6 semanas<br>⚙️ Automatizaciones — funciona desde la activación<br>📸 Fotografía — entrega en 5 días hábiles<br><br>Los primeros 30 días son de posicionamiento. Del mes 2 en adelante los resultados se aceleran notablemente.' },
+  /* CANCELACIÓN */
+  { kws:['cancelar','cancelacion','cancelación','permanencia','contrato','puedo cancelar','compromiso','mes a mes'],
+    a:'No manejamos contratos de larga permanencia. Todos los planes son <strong>mes a mes</strong>. Si decides cancelar, nos avisas con <strong>15 días de anticipación</strong> y listo, sin penalizaciones. 😊' },
+  /* PAGO / FACTURA */
+  { kws:['como pago','forma de pago','transferencia','deposito','tarjeta','pago','factura','facturacion','facturación'],
+    a:'Aceptamos <strong>transferencia bancaria (SPEI)</strong>. El pago es al inicio de cada mes. Emitimos <strong>factura electrónica (CFDI)</strong> por cada cobro. Todos nuestros precios ya incluyen <strong>IVA</strong>. ¿Necesitas más info sobre facturación?' },
+  /* IVA */
+  { kws:['iva','impuesto','impuestos','precio con iva','incluye iva'],
+    a:'Sí, todos los precios de NEXUZ <strong>ya incluyen IVA</strong>. No hay costos ocultos ni sorpresas. Lo que ves es lo que pagas. 😊' },
+  /* UBICACIÓN */
+  { kws:['donde estan','ubicacion','ubicación','ciudad','cancun','cancún','mexico','presencial','oficina'],
+    a:'Estamos en <strong>Cancún, Quintana Roo, México</strong>. Trabajamos con clientes de todo el país vía <strong>Zoom</strong>. Si estás en Cancún también podemos reunirnos presencialmente. ¿Dónde te encuentras tú?' },
+  /* REUNIÓN */
+  { kws:['reunion','reunión','llamada','zoom','cita','agendar','hablar con alguien','hablar con una persona','quiero hablar','me pueden llamar'],
+    a:'¡Claro! Las reuniones son por <strong>Zoom</strong>, duran ~30 minutos y son sin compromiso. Déjanos tus datos en el formulario de contacto y te respondemos en menos de 24 horas para agendar. ¿Te dirijo al formulario?' },
+  /* PROCESO DE TRABAJO */
+  { kws:['como trabajan','proceso','como funciona','metodologia','pasos','etapas','como es trabajar'],
+    a:'Nuestro proceso:<br><br><strong>1. Diagnóstico</strong> — Analizamos tu negocio y situación actual<br><strong>2. Estrategia</strong> — Definimos el plan a medida<br><strong>3. Onboarding</strong> — Junta de arranque por Zoom<br><strong>4. Ejecución</strong> — Publicamos, automatizamos y gestionamos<br><strong>5. Reporte</strong> — Revisamos métricas y ajustamos cada mes<br><br>Tú apruebas el contenido antes de publicarse. Siempre tienes el control.' },
+  /* CONFIDENCIALIDAD */
+  { kws:['confidencial','confidencialidad','privacidad','mis datos','seguro','informacion privada'],
+    a:'La confidencialidad es prioridad para nosotros. Toda la información de tu negocio se mantiene en estricta privacidad. Nuestro contrato incluye cláusula de confidencialidad. ¿Tienes alguna duda específica al respecto?' },
+  /* EQUIPO */
+  { kws:['quien es nexuz','quienes son','equipo','fundador','quien lo hace','experiencia'],
+    a:'NEXUZ es una agencia joven especializada en marketing digital e inteligencia artificial. Nuestro equipo combina expertise en redes, automatización y tecnología para ofrecer soluciones reales a negocios reales. ¿Quieres saber algo específico sobre nosotros?' },
+  /* TÉCNICO */
+  { kws:['tecnico','tecnologia','conocimiento','dificil','necesito saber','necesito aprender'],
+    a:'No necesitas ningún conocimiento técnico. Nosotros nos encargamos de absolutamente todo — tú solo te enfocas en tu negocio. 😊' },
+  /* EMPLEO */
+  { kws:['trabajo','empleo','vacante','unirme','colaborar','quiero trabajar'],
+    a:'¡Genial que quieras unirte! Tenemos una sección "Únete al equipo" al final de esta página con un formulario. Buscamos talento en diseño, redes, fotografía, desarrollo y ventas. ¿En qué área te gustaría colaborar?' },
+  /* RESTAURANTE */
+  { kws:['restaurante','taqueria','tacos','comida','cocina','chef','gastronomia'],
+    a:'Para restaurantes, NEXUZ es ideal. Lo más impactante:<br><br>🤖 Chatbot para reservaciones automáticas 24/7<br>📸 Fotografía profesional de platillos<br>📱 Contenido de redes que despierta apetito<br>⚙️ Automatización de confirmaciones de reserva<br><br>El Plan GROWTH es el más popular en este giro. ¿Quieres una propuesta específica?' },
+  /* CLÍNICA */
+  { kws:['clinica','medico','salud','consultorio','doctor','dentista','psicologo','nutriologo','estetica','belleza'],
+    a:'Para clínicas y consultorios, dos cosas marcan la diferencia:<br><br>🤖 Chatbot de agendamiento — tus pacientes reservan 24/7<br>📱 Contenido educativo que genera confianza<br><br>El Plan GROWTH incluye chatbot básico y es el más popular entre profesionales de salud. ¿Hablo contigo de una propuesta?' },
+  /* TIENDA */
+  { kws:['tienda','boutique','ropa','moda','zapatos','accesorios','joyeria','retail','productos'],
+    a:'Para tiendas, la fotografía y el contenido visual lo son todo:<br><br>📸 Sesiones de producto profesionales<br>📱 Contenido para Instagram y TikTok que vende<br>🤖 Chatbot para preguntas de disponibilidad y precios<br><br>El Plan SCALE incluye fotografía mensual y es ideal si vendes productos. ¿Quieres cotizarlo?' },
+  /* COACH / FREELANCER */
+  { kws:['coach','coaching','consultor','freelancer','independiente','marca personal','asesor'],
+    a:'Para coaches y freelancers, lo más valioso es posicionarte como experto y no perder ningún lead:<br><br>📱 Contenido de valor que te posicione como referente<br>🤖 Chatbot que califica leads mientras duermes<br>📊 Estrategia alineada a tu oferta<br><br>El Plan STARTER o GROWTH se adaptan muy bien. ¿Qué servicio ofreces tú?' },
+  /* YA TIENEN AGENCIA */
+  { kws:['ya tengo agencia','tengo a alguien','trabajo con alguien','tengo community manager'],
+    a:'Entendemos perfectamente. Si ya tienes alguien en redes pero quieres agregar <strong>automatizaciones o chatbots</strong>, trabajamos como complemento sin interferir. También podemos hacer una <strong>auditoría</strong> para ver si lo actual está generando resultados. ¿Qué parte te gustaría reforzar?' },
+  /* PAQUETE PERSONALIZADO */
+  { kws:['paquete personalizado','paquete a medida','a la carta','combinar servicios','solo necesito','necesito solo'],
+    a:'¡Por supuesto! Armamos el paquete exacto que necesitas. El precio base + $1,200 MXN de implementación, con IVA incluido. Usa el <strong>Recomendador de Plan</strong> en esta página (arriba de los precios) — 5 preguntas y te damos la combinación ideal para tu perfil y presupuesto. 🎯' },
+  /* URGENTE */
+  { kws:['urgente','rapido','lo necesito ya','lo antes posible','cuando pueden empezar','cuanto tardan en empezar'],
+    a:'Una vez firmado el contrato y confirmado el pago, <strong>arrancamos en 24-48 horas hábiles</strong>. El chatbot puede estar activo incluso el mismo día. Si el tiempo es crítico, menciónalo en el formulario de contacto y el equipo lo prioriza. ¿Te dirijo al formulario?' },
+  /* RECOMENDADOR */
+  { kws:['recomendador','recomiendame','que plan me recomiendas','cual me conviene','no se que plan','ayudame a elegir'],
+    a:'Para eso está nuestro <strong>Recomendador de Plan</strong> — 5 preguntas sobre tu negocio, objetivos y presupuesto, y al final te damos la recomendación exacta con explicación de por qué esa solución es la tuya. Lo encuentras en esta misma página, justo arriba de la sección de planes. 👆' },
+  /* CONTACTO */
+  { kws:['contacto','contactar','como los contacto','quiero informacion','siguiente paso','como empezamos','quiero empezar'],
+    a:'¡Excelente! El siguiente paso es dejar tus datos en el <strong>formulario de contacto</strong> al final de esta página. Te respondemos en menos de 24 horas con una propuesta personalizada.<br><br>También puedes escribirnos a:<br>📧 Nexuz@nexuzmexico.com<br>📷 Instagram: @_nexuzmx<br>👥 Facebook: NEXUZ México' },
+  /* GRACIAS */
+  { kws:['gracias','muchas gracias','ok gracias','perfecto gracias','excelente gracias'],
+    a:'¡Con mucho gusto! 😊 Si tienes más preguntas aquí estaré. Cuando estés listo, el equipo de NEXUZ te está esperando. <strong>Move smarter, grow faster.</strong> 🚀' },
+  /* ADIOS */
+  { kws:['adios','adiós','bye','hasta luego','nos vemos','chao','hasta pronto'],
+    a:'¡Hasta pronto! Cuando quieras retomar, aquí estaré. 👋 Que tengas un excelente día.' }
+];
+
+const NEXO_FALLBACK = 'No estoy seguro de haber entendido bien tu pregunta 🤔 ¿Puedes reformularla? También puedes preguntarme sobre <strong>precios</strong>, <strong>servicios</strong>, <strong>chatbots</strong>, <strong>automatizaciones</strong> o cómo <strong>contactarnos</strong>.';
+
+function nexoEscapeHtml(str){
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function nexoFindAnswer(text){
+  const norm = text.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,''); /* quita acentos */
+  let best = null, bestScore = 0;
+  NEXO_KB.forEach(entry => {
+    entry.kws.forEach(kw => {
+      const kwNorm = kw.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+      if(norm.includes(kwNorm) && kwNorm.length > bestScore){
+        bestScore = kwNorm.length;
+        best = entry.a;
+      }
+    });
+  });
+  return best || NEXO_FALLBACK;
+}
+
+function nexoAddMsg(role, html){
+  const body = document.getElementById('nexoBody');
+  const div = document.createElement('div');
+  div.className = 'nexo-msg ' + role;
+  if(role === 'bot'){
+    div.innerHTML = '<div class="nexo-msg-av"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><div class="nexo-bubble">'+html+'</div>';
+  } else {
+    div.innerHTML = '<div class="nexo-bubble">'+html+'</div>';
+  }
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+function nexoQuickReplies(options){
+  const body = document.getElementById('nexoBody');
+  const wrap = document.createElement('div');
+  wrap.className = 'nexo-quick';
+  wrap.id = 'nexoQuick';
+  options.forEach(opt => {
+    const b = document.createElement('button');
+    b.className = 'nexo-qbtn';
+    b.textContent = opt;
+    b.onclick = () => { wrap.remove(); nexoUserSend(opt); };
+    wrap.appendChild(b);
+  });
+  body.appendChild(wrap);
+  body.scrollTop = body.scrollHeight;
+}
+
+function nexoTypingShow(){
+  const body = document.getElementById('nexoBody');
+  const div = document.createElement('div');
+  div.className = 'nexo-msg bot';
+  div.id = 'nexoTyping';
+  div.innerHTML = '<div class="nexo-msg-av"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><div class="nexo-bubble"><div class="nexo-typing"><span></span><span></span><span></span></div></div>';
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+function nexoTypingHide(){
+  const el = document.getElementById('nexoTyping');
+  if(el) el.remove();
+}
+
+function nexoUserSend(text){
+  const safe = nexoEscapeHtml(text);
+  nexoAddMsg('user', safe);
+  nexoTypingShow();
+  const delay = 500 + Math.random()*500;
+  setTimeout(() => {
+    nexoTypingHide();
+    const answer = nexoFindAnswer(text);
+    nexoAddMsg('bot', answer);
+  }, delay);
+}
+
+function nexoSend(){
+  const input = document.getElementById('nexoInput');
+  const text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+  input.style.height = 'auto';
+  const qr = document.getElementById('nexoQuick');
+  if(qr) qr.remove();
+  nexoUserSend(text);
+}
+
+function nexoHandleKey(e){
+  if(e.key === 'Enter' && !e.shiftKey){
+    e.preventDefault();
+    nexoSend();
+  }
+}
+function nexoAutoResize(el){
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 80) + 'px';
+}
+
+function toggleNexo(){
+  nexoOpen = !nexoOpen;
+  document.getElementById('nexoWindow').classList.toggle('on', nexoOpen);
+  if(nexoOpen && document.getElementById('nexoBody').children.length === 0){
+    setTimeout(() => {
+      nexoAddMsg('bot', '¡Hola!  Soy <strong>Nexo</strong>, el asistente virtual de NEXUZ. Puedo ayudarte a conocer nuestros planes, precios y servicios. ¿En qué te ayudo?');
+      setTimeout(() => nexoQuickReplies(['¿Cuánto cuestan los planes?','¿Qué servicios ofrecen?','¿Cómo los contacto?']), 400);
+    }, 200);
+  }
+}
+
+</script>
+
+<!-- LOGO CANVAS RENDERER -->
+<script>
+(function(){
+  const SRC='logo.jpeg'; const THRESHOLD=55; const TARGETS=[{id:'heroLogoCanvas',h:null,cssClass:'hero-logo-img'},{id:'navLogoCanvas',h:28,cssClass:'nav-logo-img'},{id:'footLogoCanvas',h:24,cssClass:'foot-logo-img'}];
+  function removeBlack(img){ const SCALE=3; const ow=img.naturalWidth,oh=img.naturalHeight; const off=document.createElement('canvas'); off.width=ow*SCALE; off.height=oh*SCALE; const ctx=off.getContext('2d'); ctx.imageSmoothingEnabled=true; ctx.drawImage(img,0,0,off.width,off.height); const imgData=ctx.getImageData(0,0,off.width,off.height); const d=imgData.data; for(let i=0;i<d.length;i+=4){ const r=d[i],g=d[i+1],b=d[i+2]; const br=(r*.299+g*.587+b*.114); const sat=Math.max(r,g,b)-Math.min(r,g,b); if(br<THRESHOLD&&sat<40){ d[i+3]=Math.min(255,Math.round((br/THRESHOLD)*255*.6)); } } ctx.putImageData(imgData,0,0); return{canvas:off,ow,oh}; }
+  function paint(target,off,ow,oh){ const el=document.getElementById(target.id); if(!el)return; const aspect=ow/oh; if(target.h){ const dH=target.h,dW=Math.round(dH*aspect),dpr=window.devicePixelRatio||1; el.width=dW*dpr*3; el.height=dH*dpr*3; el.style.width=dW+'px'; el.style.height=dH+'px'; }else{ const rect=el.getBoundingClientRect(); const dH=rect.height>0?rect.height:200,dW=Math.round(dH*aspect),dpr=window.devicePixelRatio||1; el.width=dW*dpr*3; el.height=dH*dpr*3; el.style.width=dW+'px'; } const ctx=el.getContext('2d'); ctx.imageSmoothingEnabled=true; ctx.drawImage(off,0,0,el.width,el.height); }
+  const img=new Image(); img.crossOrigin='Anonymous'; img.src=SRC;
+  img.onload=function(){ const{canvas:off,ow,oh}=removeBlack(img); requestAnimationFrame(()=>{ TARGETS.forEach(t=>paint(t,off,ow,oh)); setTimeout(()=>paint(TARGETS[0],off,ow,oh),400); }); };
+  img.onerror=function(){ TARGETS.forEach(t=>{ const el=document.getElementById(t.id); if(!el)return; const fb=document.createElement('img'); fb.src=SRC; fb.alt='NEXUZ'; fb.className=t.cssClass; fb.style.mixBlendMode='screen'; el.parentNode.replaceChild(fb,el); }); };
+})();
+</script>
+</body>
+</html>
