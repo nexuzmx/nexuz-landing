@@ -244,7 +244,7 @@ nav.scrolled{
   100%{opacity:1;transform:scale(1) translateY(0);}
 }
 .hero-logo-img{
-  height:clamp(130px,22vw,280px);width:auto;display:block;
+  height:clamp(200px,38vw,480px);width:auto;display:block;
   filter:
     drop-shadow(0 0 40px rgba(43,43,255,.95))
     drop-shadow(0 0 80px rgba(43,43,255,.5))
@@ -261,34 +261,7 @@ nav.scrolled{
     brightness(1.4) contrast(1.2);
 }
 
-.hero-slogan{
-  font-family:'Orbitron',sans-serif;
-  font-size:clamp(.68rem,1.8vw,.95rem);
-  color:rgba(255,255,255,.88);
-  letter-spacing:clamp(10px,2.5vw,22px);
-  text-transform:uppercase;font-weight:700;
-  padding-left:clamp(10px,2.5vw,22px);
-  animation:sloganReveal 1.2s .7s cubic-bezier(0.16,1,0.3,1) both,sloganGlow 3s 1.9s ease-in-out infinite;
-  position:relative;
-}
-.hero-slogan::before{
-  content:'';
-  position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);
-  width:80%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--accent),var(--accent3),var(--accent),transparent);
-  animation:lineGlow 3s ease-in-out infinite;
-}
-@keyframes sloganReveal{
-  0%{opacity:0;letter-spacing:60px;filter:blur(20px);}
-  100%{opacity:1;letter-spacing:clamp(10px,2.5vw,22px);filter:blur(0);}
-}
-@keyframes sloganGlow{
-  0%,100%{text-shadow:0 0 30px rgba(43,43,255,.6),0 0 60px rgba(43,43,255,.3);}
-  50%{text-shadow:0 0 50px rgba(43,43,255,.9),0 0 100px rgba(0,212,255,.4);}
-}
-@keyframes lineGlow{
-  0%,100%{opacity:.5;}50%{opacity:1;}
-}
+/* slogan removed */
 
 .scroll-hint{
   position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
@@ -576,8 +549,7 @@ nav.scrolled{
 .car-dots{display:flex;gap:.5rem;}
 .car-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.15);cursor:pointer;transition:all .3s;}
 .car-dot.active{background:linear-gradient(135deg,var(--accent),var(--accent3));width:22px;border-radius:4px;box-shadow:0 0 10px rgba(43,43,255,.5);}
-@media(max-width:900px){.car-slide{flex:0 0 calc(50% - .75rem);}}
-@media(max-width:560px){.car-slide{flex:0 0 100%;}.car-arrow{width:40px;height:40px;}}
+/* carousel mobile handled in global media queries */
 
 /* ============ NEXO CHATBOT ============ */
 .nexo-launcher{position:fixed;bottom:2rem;right:2rem;z-index:5000;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 35px rgba(43,43,255,.5);transition:all .3s cubic-bezier(0.34,1.56,0.64,1);border:none;animation:nexoPulse 3s ease-in-out infinite;}
@@ -687,7 +659,7 @@ nav.scrolled{
 .rec-cta-main:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(43,43,255,.5);}
 .rec-cta-restart{padding:.9rem 1.4rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--text2);border-radius:12px;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Sora',sans-serif;}
 .rec-cta-restart:hover{color:#fff;border-color:rgba(255,255,255,.2);}
-@media(max-width:700px){.rec-result-cards{grid-template-columns:1fr;}.rec-options{grid-template-columns:1fr 1fr;}.rec-wizard{padding:1.8rem 1.2rem;}}
+/* mobile handled in global media queries */
 
 /* ============ COMPARATIVA PLAN GROWTH ============ */
 .comparativa-wrapper{
@@ -1045,22 +1017,99 @@ footer{
 .toast.on{transform:translateY(0);opacity:1;}
 
 /* ============ RESPONSIVE ============ */
-@media(max-width:1100px){.srv-grid{grid-template-columns:repeat(2,1fr);}}
+/* ── TABLET ── */
+@media(max-width:1100px){
+  .srv-grid{grid-template-columns:repeat(2,1fr);}
+}
 @media(max-width:900px){
   nav{padding:0 1.5rem;}
   .nav-links{display:none;}
   .about-grid,.plans-grid,.contact-grid,.work-form{grid-template-columns:1fr;}
-  #nosotros > div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;gap:2.5rem !important;}
+  #nosotros > div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;gap:2rem !important;}
   .plans-grid{gap:1rem;}
-  .sec,.sec-full,#portafolio{padding:5rem 1.5rem;}
+  .sec,.sec-full,#portafolio,#recomendador{padding:4.5rem 1.5rem;}
   footer{padding:2rem 1.5rem;}
   .srv-grid{grid-template-columns:1fr 1fr;gap:1rem;}
   .faq-grid{grid-template-columns:1fr;}
+  /* Carrusel */
+  .car-slide{flex:0 0 calc(50% - .75rem);}
+  /* Recomendador */
+  .rec-wizard{padding:1.8rem 1.4rem;}
+  .rec-options{grid-template-columns:repeat(2,1fr);gap:.75rem;}
+  .rec-opt{padding:.9rem .7rem;}
+  .rec-opt .rec-opt-icon{width:44px;height:44px;}
+  .rec-opt .rec-opt-icon svg{width:22px;height:22px;}
+  .rec-opt-label{font-size:.78rem;}
+  .rec-opt-sub{font-size:.65rem;}
+  .rec-budget-row{grid-template-columns:1fr 1fr;display:grid;gap:.6rem;}
+  .rec-budget-btn{min-width:unset;padding:.75rem .6rem;font-size:.75rem;}
+  .rec-result-cards{grid-template-columns:1fr;}
+  .rec-question{font-size:1rem;}
+  .rec-result-title{font-size:1.3rem;}
+  .rec-price-val{font-size:1.6rem;}
+  /* Comparativa */
+  .comparativa-table th,.comparativa-table td{padding:.8rem .6rem;font-size:.72rem;}
+  /* Nosotros */
+  .about-text p{font-size:.85rem;}
 }
-@media(max-width:520px){
-  .srv-grid{grid-template-columns:1fr;}
-  nav{padding:0 1.2rem;}
-  .sec,.sec-full,#portafolio{padding:4rem 1.2rem;}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  .sec,.sec-full,#portafolio,#recomendador{padding:3.5rem 1.2rem;}
+  /* Hero logo mobile */
+  .hero-logo-img{height:clamp(160px,55vw,280px) !important;}
+  /* Servicios */
+  .srv-grid{grid-template-columns:1fr;gap:.9rem;}
+  .srv-card{padding:1.6rem 1.4rem;}
+  /* Recomendador — 1 columna en móvil */
+  .rec-wizard{padding:1.4rem 1rem;}
+  .rec-options{grid-template-columns:1fr;gap:.6rem;}
+  .rec-opt{display:flex;align-items:center;gap:1rem;text-align:left;padding:.9rem 1rem;}
+  .rec-opt .rec-opt-icon{width:42px;height:42px;flex-shrink:0;margin:0;}
+  .rec-opt .rec-opt-icon svg{width:20px;height:20px;}
+  .rec-opt-label{font-size:.82rem;}
+  .rec-opt-sub{font-size:.68rem;}
+  .rec-budget-row{grid-template-columns:1fr;display:flex;flex-direction:column;gap:.5rem;}
+  .rec-budget-btn{padding:.85rem 1rem;font-size:.8rem;text-align:left;}
+  .rec-nav{flex-direction:column-reverse;gap:.7rem;}
+  .rec-next,.rec-back{width:100%;text-align:center;padding:.85rem;}
+  .rec-question{font-size:.95rem;}
+  .rec-hint{font-size:.75rem;}
+  .rec-result-title{font-size:1.15rem;}
+  .rec-price-val{font-size:1.4rem;}
+  .rec-result-actions{flex-direction:column;}
+  .rec-cta-main,.rec-cta-restart{width:100%;}
+  /* Planes */
+  .plan{padding:1.8rem 1.4rem;}
+  .plan-price{font-size:1.6rem;}
+  /* Carrusel */
+  .car-slide{flex:0 0 100%;}
+  .car-arrow{width:38px;height:38px;}
+  .car-nav{gap:1rem;}
+  /* FAQ */
+  .faq-question{font-size:.82rem;padding:1rem 1.2rem;}
+  /* Contacto */
+  .contact-grid{gap:2.5rem;}
+  /* Footer */
+  .foot-inner{flex-direction:column;align-items:flex-start;gap:1rem;}
+  /* Nav */
+  nav{padding:0 1rem;}
+  /* Comparativa scroll horizontal */
+  .comparativa-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .comparativa-table{min-width:520px;}
+  /* Adicionales */
+  .ind-card{flex-direction:column;align-items:flex-start;gap:.8rem;}
+  .ind-right{flex-direction:row;align-items:center;gap:1rem;width:100%;}
+  /* Nosotros imagen */
+  #nosotros img{max-width:100% !important;}
+}
+
+/* ── SMALL MOBILE ── */
+@media(max-width:380px){
+  .sec,.sec-full,#portafolio,#recomendador{padding:2.8rem 1rem;}
+  .rec-wizard{padding:1.2rem .9rem;}
+  .plan-price{font-size:1.4rem;}
+  .title{font-size:1.6rem;}
 }
 </style>
 </head>
@@ -1102,7 +1151,6 @@ footer{
   <div class="hero-grid-overlay"></div>
   <div class="hero-content">
     <div class="hero-logo-wrap"><canvas id="heroLogoCanvas" class="hero-logo-img" title="NEXUZ Logo"></canvas></div>
-    <div class="hero-slogan">Move smarter, grow faster.</div>
   </div>
   <div class="scroll-hint"><span>Descubrir</span><div class="scroll-arrow"></div></div>
 </section>
