@@ -357,6 +357,20 @@ nav.scrolled{
   gap: 3rem;
   margin-top: 3.5rem;
 }
+#nosotros .about-layout{
+  grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr) !important;
+  gap:3rem !important;
+  margin-top:1.5rem !important;
+}
+#nosotros .about-visual{
+  justify-content:flex-end !important;
+}
+#nosotros .about-visual img{
+  width:100% !important;
+  max-width:430px !important;
+  height:auto !important;
+  display:block;
+}
 .about-text p{font-size:.88rem;color:var(--text2);line-height:2;margin-bottom:1.3rem;}
 .about-text .highlight{
   color:var(--text);font-size:.86rem;font-weight:500;
@@ -1025,7 +1039,7 @@ footer{
   nav{padding:0 1.5rem;}
   .nav-links{display:none;}
   .about-grid,.plans-grid,.contact-grid,.work-form{grid-template-columns:1fr;}
-  #nosotros > div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;gap:2rem !important;}
+  #nosotros > div[style*="grid-template-columns:1fr 1fr"],#nosotros .about-layout{grid-template-columns:1fr !important;gap:2rem !important;}
   .plans-grid{gap:1rem;}
   .sec,.sec-full,#portafolio,#recomendador{padding:4.5rem 1.5rem;}
   footer{padding:2rem 1.5rem;}
@@ -1102,6 +1116,7 @@ footer{
   .ind-right{flex-direction:row;align-items:center;gap:1rem;width:100%;}
   /* Nosotros imagen */
   #nosotros img{max-width:100% !important;}
+  #nosotros .about-visual{justify-content:center !important;}
 }
 
 /* ── SMALL MOBILE ── */
@@ -1159,13 +1174,13 @@ footer{
 <div class="sec" id="nosotros">
   <div class="reveal"><div class="label">Sobre nosotros</div></div>
   <div class="reveal delay-1"><h2 class="title">Tu crecimiento digital,<br><em>nuestra misión.</em></h2></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem;">
+  <div class="about-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem;">
     <div class="about-text reveal delay-2">
       <p>En NEXUZ combinamos inteligencia artificial, estrategia y creatividad para llevar tu negocio al siguiente nivel. Somos rápidos, confiables y obsesivamente orientados a resultados.</p>
       <p>Trabajamos con emprendedores, freelancers y negocios pequeños y medianos que quieren crecer en serio, sin complicarse la vida. Si tu tiempo vale, nosotros lo sabemos aprovechar.</p>
       <div class="highlight">"Automatizamos lo que se puede automatizar, optimizamos lo que se puede optimizar y creamos lo que necesita ser creado."</div>
     </div>
-    <div class="reveal delay-3" style="display:flex;align-items:center;justify-content:center;">
+    <div class="about-visual reveal delay-3" style="display:flex;align-items:center;justify-content:center;">
       <img src="robot-nosotros.png" alt="NEXUZ — Asistente inteligente" style="width:100%;max-width:520px;height:auto;display:block;">
     </div>
   </div>
